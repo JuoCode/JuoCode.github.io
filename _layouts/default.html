@@ -9,33 +9,27 @@
   <!-- syntax highlighting CSS -->
   <link rel="stylesheet" href="/css/syntax.css">
 
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+  <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome.min.css">
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/css/main.css"></head>
 <body>
 
   <div class="site">
-    <div class="header">
-      <h1 class="title">
-        <a href="/">{{ site.name }}</a>
-      </h1>
-      <a class="extra" href="/">home</a>
+
+    <div class="pure-g">
+
+        <div class="pure-u-1-5 person-info">
+          <a href="https://github.com/JuoCode">
+            <img src="http://placeimg.com/160/160/any" alt="avator" class="avator">
+          </a>
+        </div>
+        <div class="pure-u-4-5 content">
+          {{ content }}
+        </div>
     </div>
-    {{ content }}
-    <div class="footer">
-      <div class="contact">
-        <p>
-          Your Name
-          <br />
-          gjdrift@gmail.com
-        </p>
-      </div>
-      <div class="contact">
-        <p>
-          <a href="https://github.com/JuoCode">github.com/JuoCode</a>
-          <br />
-        </p>
-      </div>
-    </div>
+
   </div>
 
 </body>

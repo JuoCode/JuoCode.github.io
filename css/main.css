@@ -1,4 +1,4 @@
-/*****************************************************************************/
+/*/*****************************************************************************/
 /*
 /* Common
 /*
@@ -17,6 +17,7 @@ body {
   font: 13.34px Helvetica, Arial, sans-serif;
   font-size: small;
   text-align: center;
+  background: url('../images/retina_wood.png');
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -58,14 +59,38 @@ ul.posts span {
 .site {
   font-size: 115%;
   text-align: justify;
-  width: 42em;
   margin: 3em auto 2em;
   line-height: 1.5em;
+  width: 1080px;
+  border-radius: 18px;
 }
 
-.site .header a {
-  font-weight: bold;
-  text-decoration: none;
+.site .content{
+  background-color: rgba(255,255,255,.7);
+  padding: 20px;
+  box-shadow: 0 0 20px 10px rgba(0,0,0,.1);
+  border: 5px solid rgba(255,255,255,.2);
+  box-sizing: border-box;
+}
+
+.site .person-info{
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.site .person-info .info .section a{
+  color: #f9f9f9;
+}
+
+.site .person-info img.avator{
+  border-radius: 200px;
+  border: 5px solid #fff;
+  display: block;
+  margin: 0 auto;
+}
+
+.site .person-info .info{
+
 }
 
 .site .header h1.title {
@@ -132,6 +157,7 @@ ul.posts span {
   border: 1px solid #ddd;
   background-color: #eef;
   padding: 0 .4em;
+  overflow-x: auto;
 }
 
 .post ul, .post ol {
@@ -148,6 +174,14 @@ ul.posts span {
   border: none;
 }
 
+.posts  li a{
+  text-decoration: none;
+  color: #999;
+}
+.posts li a:hover{
+  color: #000;
+}
+
 /* terminal */
 .post pre.terminal {
   border: 1px solid #000;
@@ -158,3 +192,4 @@ ul.posts span {
 .post pre.terminal code {
   background-color: #333;
 }
+*/
