@@ -41,16 +41,12 @@ Grunt是一个自动构建工具，类似Java中的Maven和ant，使前端开发
 
 典型的Grunt项目包含两个配置文件 `package.json` 和 `Gruntfile`
 
-**package.json**
-
-这个文件保存项目的元数据，Grunt依赖的插件会保存在`devDependencies`中
+**package.json** : 这个文件保存项目的元数据，Grunt依赖的插件会保存在`devDependencies`中
 
 使用 `npm init` 命令可以生成该文件
 
 
-**Gruntfile**
-
-文件名可以是 `Gruntfile.js` 或 `Gruntfile.coffee`，这个文件是Gruntfile的主要配置文件，可以自定义任务并且加载Grunt插件
+**Gruntfile** : 文件名可以是 `Gruntfile.js` 或 `Gruntfile.coffee`，这个文件是Gruntfile的主要配置文件，可以自定义任务并且加载Grunt插件
 
 可以使用 [grunt-init](http://gruntjs.com/project-scaffolding) 配合各种模板来生成该文件和 `package.json`
 
