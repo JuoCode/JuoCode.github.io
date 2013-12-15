@@ -1,195 +1,207 @@
-/*/*****************************************************************************/
-/*
-/* Common
-/*
-/*****************************************************************************/
-
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-}
-
-html, body { height: 100%; }
-
 body {
-  background-color: #FFF;
-  font: 13.34px Helvetica, Arial, sans-serif;
-  font-size: small;
-  text-align: center;
-  background: url('../images/retina_wood.png');
+  background-image: url("/images/bg.jpg");
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+}
+*::selection{
+  color: #fff;
+  background-color: #81b625;
+}
+.split{
+  height: 50px;
+}
+a{
+  color: #86b32d;
+  border-bottom: 1px dotted #86b32d;
+  text-decoration: none;
+  padding-bottom: 2px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%; }
-
-h1 { margin-bottom: 1em; }
-p { margin: 1em 0; }
-
-a         { color: #00a; }
-a:hover   { color: #000; }
-a:visited { color: #a0a; }
-
-/*****************************************************************************/
-/*
-/* Home
-/*
-/*****************************************************************************/
-ul.posts {
-  list-style-type: none;
-  margin-bottom: 2em;
-}
-
-ul.posts li {
-  line-height: 1.75em;
-}
-
-ul.posts span {
-  color: #aaa;
-  font-family: Monaco, "Courier New", monospace;
-  font-size: 80%;
-}
-
-/*****************************************************************************/
-/*
-/* Site
-/*
-/*****************************************************************************/
-
-.site {
-  font-size: 115%;
-  text-align: justify;
-  margin: 3em auto 2em;
-  line-height: 1.5em;
-  width: 1080px;
-  border-radius: 18px;
-}
-
-.site .content{
-  background-color: rgba(255,255,255,.7);
-  padding: 20px;
-  box-shadow: 0 0 20px 10px rgba(0,0,0,.1);
-  border: 5px solid rgba(255,255,255,.2);
-  box-sizing: border-box;
-}
-
-.site .person-info{
-  box-sizing: border-box;
-  padding: 20px;
-}
-
-.site .person-info .info .section a{
-  color: #f9f9f9;
-}
-
-.site .person-info img.avator{
-  border-radius: 200px;
-  border: 5px solid #fff;
-  display: block;
+.wrapper {
+  width: 960px;
   margin: 0 auto;
+  padding: 50px 0;
 }
 
-.site .person-info .info{
-
-}
-
-.site .header h1.title {
-  display: inline-block;
-  margin-bottom: 2em;
-}
-
-.site .header h1.title a {
-  color: #a00;
-}
-
-.site .header h1.title a:hover {
-  color: #000;
-}
-
-.site .header a.extra {
-  color: #aaa;
-  margin-left: 1em;
-}
-
-.site .header a.extra:hover {
-  color: #000;
-}
-
-.site .meta {
-  color: #aaa;
-}
-
-.site .footer {
-  font-size: 80%;
-  color: #666;
-  border-top: 4px solid #eee;
-  margin-top: 2em;
+header {
+  /*margin-top: 50px;*/
+  background-color: #81b625;
   overflow: hidden;
 }
-
-.site .footer .contact {
+header .avatar {
+  height: 80px;
   float: left;
-  margin-right: 3em;
+  /*width: 200px;*/
 }
-
-.site .footer .contact a {
-  color: #8085C1;
+header .avatar img {
+  max-width: 100%;
 }
-
-.site .footer .rss {
-  margin-top: 1.1em;
-  margin-right: -.2em;
+header .blog-name {
+  color: #fff;
+}
+header .blog-name h1{
+  text-align: center;
+  margin: 0;
+  height: 80px;
+  font-weight: 600;
+  line-height: 80px;
+}
+header .blog-name h1 a{
+  color: #fff;
+}
+header .about {
+  transition: all .3s ease-in-out;
+  display: block;
   float: right;
+  height: 80px;
+  line-height: 80px;
+  background-color: #9bcc45;
+  width: 80px;
+  text-align: center;
+  font-size: 28px;
+  color: #fff;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+header .picture {
+  transition: all .3s ease-in-out;
+  display: block;
+  float: right;
+  height: 80px;
+  line-height: 80px;
+  background-color: #93c43e;
+  width: 80px;
+  text-align: center;
+  font-size: 28px;
+  color: #fff;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+header .about:hover, header .picture:hover {
+  background-color: #fff;
+  color: #9bcc45;
 }
 
-.site .footer .rss img {
-  border: 0;
+.content {
+  min-height: 300px;
+  -webkit-perspective: 200px;
 }
-
-/*****************************************************************************/
-/*
-/* Posts
-/*
-/*****************************************************************************/
-
-/* standard */
-.post pre {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .4em;
-  overflow-x: auto;
+.content .item {
+  position: relative;
+  border-bottom: 3px solid #93c43e;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 30px 64px 30px 64px;
+  transition: all .8s ease-in-out;
+  -webkit-transform: rotateX(-80deg) scale(0.7) translateY(90px);
+  opacity: 0;
 }
-
-.post ul, .post ol {
-  margin-left: 1.35em;
+.content .cover {
+  float: left;
+  margin-right: 20px;
 }
-
-.post code {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .2em;
+.content .side {
+  position: absolute;
+  right: 0px;
+  bottom: 0;
+  /*    top: 0px;*/
+  height: 80px;
+  background-color: #93c43e;
+  color: #fff;
+  width: 70px;
+  text-align: right;
+  padding-right: 10px;
 }
-
-.post pre code {
-  border: none;
+.content .side .date {
+  line-height: 30px;
+  padding: 5px 0;
+  font-size: 24px;
+  display: block;
 }
-
-.posts  li a{
-  text-decoration: none;
-  color: #999;
+.content .side .year {
+  display: block;
+  font-size: 10px;
 }
-.posts li a:hover{
+.content h2.title {
+  font-size: 24px;
+  line-height: 40px;
+  margin: 0;
+  margin-bottom: 10px;
+  padding-right: 120px;
+}
+.content h2.title a {
   color: #000;
+  text-decoration: none;
+  transition: all .25s ease-in-out;
+}
+.content h2.title a:hover {
+  color: #81b625;
+}
+.content .desc {
+  padding-left: 100px;
+  padding-right: 120px;
+  margin: 0 0 15px 0;
+  line-height: 20px;
+  color: #666;
 }
 
-/* terminal */
-.post pre.terminal {
-  border: 1px solid #000;
-  background-color: #333;
-  color: #FFF;
+.content .comein {
+  opacity: 1;
+  -webkit-transform: scale(1) rotateX(0);
 }
 
-.post pre.terminal code {
-  background-color: #333;
+.content .post-wrapper{
+  background-color: #fff;
+  position: relative;
+  border-bottom: 3px solid #93c43e;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 30px 64px 30px 64px;
+  transition: all .8s ease-in-out;
+  /*-webkit-transform: rotateX(-80deg) scale(0.7) translateY(90px);*/
+  /*opacity: 0;*/
 }
+
+
+/*
+      ____             __ 
+     / __ \____  _____/ /_
+    / /_/ / __ \/ ___/ __/
+   / ____/ /_/ (__  ) /_  
+  /_/    \____/____/\__/  
+                          
 */
+
+.post-wrapper h2.title{
+  padding-left: 10px;
+  border-left: 6px solid #81b625;
+}
+
+.post-wrapper h2.title small.meta{
+  display: block;
+  font-size: 12px;
+  color: #666;
+}
+.post-wrapper h2.title small.meta span{
+  margin-right: 20px;
+}
+.post-wrapper h2.title small.meta span i{
+  margin-right: 5px;
+}
+
+.post h2{
+  padding-left: 10px;
+  border-left: 4px solid #81b625;
+}
+
+.post p{
+  /*padding-left: 10px;*/
+  color: #444;
+}
+
+.post .highlight{
+  overflow: scroll;
+  border: 1px solid #ccc;
+  padding: 10px;
+}

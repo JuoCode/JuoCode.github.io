@@ -1,13 +1,30 @@
 ---
 layout: default
-title: 前端乱记 -- Juo
+title: 我的笔记
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+<div class="contentwrapper">
+  {% for post in site.posts %}
+    <div class="item">
+      <img src="/covers/{{ post.cover }}" alt="" class="cover"  width="80" height="80"/>
+
+      <div class="side">
+        <span class="date">
+          {{ post.date | date: "%m/%d" }}
+        </span>
+        <span class="year">
+          {{ post.date | date: "%Y" }}
+        </span>
+      </div>
+
+      <h2 class="title">
+        <a href="{{ post.url }}">
+          {{ post.title }}
+        </a>
+      </h2>
+      <div class="desc">
+        {{ post.desc }}
+      </div>
+    </div>
+  {% endfor %}
 </div>

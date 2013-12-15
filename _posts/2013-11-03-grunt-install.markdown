@@ -3,9 +3,13 @@ layout: post
 title:  "Grunt学习笔记1-使用Grunt输出Hello world"
 date:   2013-11-03 22:53:43
 categories: grunt
+desc: Grunt安装,插件安装,使用Grunt输出'Hello world'
+cover: grunt.png
+tags: grunt
+comments: true
 ---
 
-![Grunt](http://gruntjs.com/img/grunt-logo.svg)
+<!-- ![Grunt](http://gruntjs.com/img/grunt-logo.svg) -->
 
 ## Grunt介绍
 

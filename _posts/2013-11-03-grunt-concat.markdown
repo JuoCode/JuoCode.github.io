@@ -3,6 +3,9 @@ layout: post
 title:  "Grunt学习笔记2-使用Grunt concat插件合并文件"
 date:   2013-11-03 22:53:43
 categories: grunt
+desc: 使用Grunt实现文件合并,多文件,多个Target,动态文件名和自定义函数预处理等
+cover: grunt.png
+comments: true
 ---
 
 [github地址](https://github.com/gruntjs/grunt-contrib-concat)
@@ -22,7 +25,7 @@ categories: grunt
 	npm install grunt-contrib-concat --save-dev	
 
 ## Gruntfile
-{% highlight coffeescript %}
+{% highlight coffeescript linenos%}
 module.exports = (grunt)->
   'use strict'	
   grunt.initConfig
@@ -110,6 +113,9 @@ grunt.initConfig
       files:
         'dist/built.js': ['src/project.js']
 {% endhighlight %}	
+      
+
+
       
 		
 	 
