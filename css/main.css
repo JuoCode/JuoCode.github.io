@@ -103,7 +103,13 @@ header .about:hover, header .picture:hover {
   background-color: #fff;
   padding: 30px 64px 30px 64px;
   transition: all .8s ease-in-out;
-  -webkit-transform: rotateX(-60deg) scale(1.2) translateY(90px);
+
+  /*Effect1*/
+  /*-webkit-transform: rotateX(-60deg) scale(1.2) translateY(90px);*/
+
+  /*Effect2*/
+  -webkit-transform: rotateX(-12deg) scale(1.1) translateY(120px) translateZ(61px);
+  
   opacity: 0;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
