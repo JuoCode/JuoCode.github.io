@@ -5,7 +5,7 @@ date:   2013-12-13
 categories: ember.js
 cover: emberjs.png
 desc: 在Ember.js应用中使用自定义View实现Radio button
-cover: emberjs.png
+cover: rails.png
 comments: true
 ---
 

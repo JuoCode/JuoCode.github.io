@@ -1,3 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto);
+*{font-family: 'Lato', sans-serif;}
+
 body {
   background-image: url("/images/bg.jpg");
   -webkit-background-size: cover;
@@ -46,6 +49,12 @@ header .blog-name h1{
   height: 80px;
   font-weight: 600;
   line-height: 80px;
+  background: url('/images/slogan.png') no-repeat;
+  -webkit-background-size: contain;
+  background-size: contain;
+  background-position: 50% 50%;
+  padding-left: 200px;
+  background-origin: content-box;
 }
 header .blog-name h1 a{
   color: #fff;
@@ -94,8 +103,11 @@ header .about:hover, header .picture:hover {
   background-color: #fff;
   padding: 30px 64px 30px 64px;
   transition: all .8s ease-in-out;
-  -webkit-transform: rotateX(-80deg) scale(0.7) translateY(90px);
+  -webkit-transform: rotateX(-60deg) scale(1.2) translateY(90px);
   opacity: 0;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
 }
 .content .cover {
   float: left;
@@ -147,7 +159,7 @@ header .about:hover, header .picture:hover {
 }
 
 .content .comein {
-  opacity: 1;
+  opacity: .85;
   -webkit-transform: scale(1) rotateX(0);
 }
 
