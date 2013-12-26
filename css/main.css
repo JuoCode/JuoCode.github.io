@@ -216,10 +216,17 @@ header .about:hover, header .picture:hover {
 .post p{
   /*padding-left: 10px;*/
   color: #444;
+  letter-spacing: 1px;
+  line-height: 1.5em;
 }
 
 .post .highlight{
   overflow: scroll;
-  border: 1px solid #ccc;
+  border: 2px solid #C5EBCD;
   padding: 10px;
+}
+
+.post .highlight pre code span{
+  font-family: 'Inconsolata', sans-serif;
+
 }
