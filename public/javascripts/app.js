@@ -24,5 +24,6 @@ function showSignUpPanel(){
 }
 
 function closeModal(ele){
-	$(ele).parents('modal').addClass('modal_hide')
+	$('.dark_cover').fadeOut('fast');
+	$(ele).parents('.modal').addClass('modal_hide')
 }
