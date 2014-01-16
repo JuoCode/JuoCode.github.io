@@ -262,7 +262,6 @@ body {
 	font-size: 15px;
 	width: 20%;
 	display: table-cell;
-	max-width:450px;
 }
 .features .row .cell .caption {
 	text-align: left;
@@ -273,6 +272,7 @@ body {
 	min-height: 60px;
 	font-size: 18px;
 	font-weight:500;
+	max-width:450px;
 }
 .features .row .cell .caption h3 {
 	letter-spacing: 1px;
@@ -314,34 +314,38 @@ body {
 	font-size: 16px;
 	padding: 10px 0;
 	text-align: justify;
+	max-width: 674px;
+	margin: auto;
 }
 .macbook .row .cell #download {
-	width: 80%;
-	padding-top: 20px;
+	max-width: 670px;
+	margin: auto;
+/*	padding-top: 20px;*/
 	text-align: right;
 }
 .macbook .row .cell #download a {
 	background-color: #81b7ff;
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #88baff), color-stop(100%, #56a0ff));
-	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 	color: #fff;
-	font-size: 12px;
-	padding: 6px 12px;
-	border-radius: 4px;
+	font-size: 14px;
+/*	padding: 6px 12px;*/
+	width: 121px;
+	height: 34px;
+	text-align: center;
+	line-height: 34px;
+	display: inline-block;
 	text-decoration: none;
-}
-.macbook .row .cell #download a:hover {
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #89b8f9), color-stop(100%, #5084ed));
+	background:url('../images/button_sdk.jpg');
 }
 .macbook .row .cell:first-child {
-	width: 40%;
-	text-align: left;
+	width: 30%;
+	text-align: right;
+	padding-right: 40px;
 }
 .macbook .row .cell:first-child img {
-	width: 90%;
+	width: 100%;
 }
 .macbook .row .cell .icons{
-	max-width: 694px;
+	max-width: 744px;
 	margin: 0 auto;
 /*	background-color: #fff;*/
 }
@@ -577,6 +581,26 @@ body {
 #login_panel .body form .hint a:hover {
 	text-decoration: underline;
 }
+@media (min-width: 1920px) {
+	.features .row .cell {
+		padding: 0 4%;
+	}
+	.macbook {
+		display: table;
+		padding: 80px 4.14%;
+		background-color: rgba(41, 48, 71, 0.03);
+		width: 100%;
+		box-sizing: border-box;
+/*		background-color: #f00;*/
+	}
+	.macbook .row .cell .text-wrapper{
+/*		padding: 0 140px;*/
+		margin: auto;
+		box-sizing:border-box;
+		max-width: 674px;
+	}
+}
+
 /* Large desktop */
 
 @media (max-width: 979px) {
