@@ -174,7 +174,9 @@ body {
 	font-weight: 500;
 	font-size: 16px;
 }
-.banner .reserve input[type="submit"]:focus{outline:none;}
+.banner .reserve input[type="submit"]:focus {
+	outline: none;
+}
 .banner .reserve input[type="submit"]:hover {
 	background-color: rgba(153, 192, 255, 0.7);
 }
@@ -182,7 +184,7 @@ body {
 	color: #96a8b5;
 	font-size: 15px;
 	margin-top: 5px;
-/*	letter-spacing: 0.003px;*/
+	/*	letter-spacing: 0.003px;*/
 }
 .banner .scroll-control {
 	display: none;
@@ -245,14 +247,18 @@ body {
 .logos .item img:last {
 	-webkit-filter: none;
 }
+/*====================================================
+	Features
+====================================================*/
+
 .features {
 	background-image: url("../images/twill.png");
-	padding: 50px 10.41%;
 	display: table;
 	width: 100%;
 	box-sizing: border-box;
 	text-align: center;
-	padding: 60px 7.14% 60px;
+	padding: 60px 4.14%;
+	overflow: hidden;
 }
 .features .row {
 	display: table-row;
@@ -271,13 +277,13 @@ body {
 .features .row .cell .caption p {
 	min-height: 60px;
 	font-size: 18px;
-	font-weight:500;
-	max-width:450px;
+	font-weight: 500;
+	/*	max-width: 450px;*/
 }
 .features .row .cell .caption h3 {
 	letter-spacing: 1px;
 	text-align: center;
-	margin: 30px 0 0 0;
+	/*	margin: 30px 0 0 0;*/
 	font-size: 27px;
 	font-weight: bold;
 	color: #5e759f;
@@ -288,86 +294,81 @@ body {
 	padding-left: 20px;
 	font-weight: 500;
 }
-.features .row .cell ul li{
+.features .row .cell ul li {
 	margin-bottom: 12px;
 	font-size: 18px;
 	line-height: .9em;
 }
+/*===============Features=======================*/
+
+/*====================================================
+	MacBook
+====================================================*/
+
 .macbook {
-	display: table;
 	padding: 80px 4.14%;
 	background-color: rgba(41, 48, 71, 0.03);
-	width: 100%;
 	box-sizing: border-box;
 }
-.macbook .row {
-	display: table-row;
+.macbook .media-object {
+	float: left;
+	width: 400px;
 }
-.macbook .row .cell {
+.macbook .media-content {
+	padding-left: 400px;
 	color: #5c90bf;
-	display: table-cell;
-	vertical-align: top;
 }
-.macbook .row .cell .text-wrapper {
+@media (max-width: 960px) {
+	.macbook .media-object {
+		float: none;
+		width: 100%;
+	}
+	.macbook .media-content {
+		padding-left: 0;
+	}
+}
+.macbook .media-content ul {
+	list-style: none;
 	width: 100%;
+	overflow: hidden;
+	padding: 0;
+}
+.macbook .media-content ul li {
+	float: left;
+	width: 16.666666%;
+	text-align: center;
+}
+.macbook .media-content ul li img {
+	display: block;
+	margin: auto;
+	margin-bottom: 5px;
+}
+.macbook .media-content .text-wrapper {
 	line-height: 1.5em;
 	font-size: 16px;
 	padding: 10px 0;
 	text-align: justify;
-	max-width: 674px;
 	margin: auto;
+	padding: 0 30px;
 }
-.macbook .row .cell #download {
-	max-width: 670px;
-	margin: auto;
-/*	padding-top: 20px;*/
+.macbook .media-content #download {
 	text-align: right;
+	padding: 24px 30px;
 }
-.macbook .row .cell #download a {
+.macbook .media-content #download a {
 	background-color: #81b7ff;
 	color: #fff;
 	font-size: 14px;
-/*	padding: 6px 12px;*/
 	width: 121px;
 	height: 34px;
 	text-align: center;
 	line-height: 34px;
 	display: inline-block;
 	text-decoration: none;
-	background:url('../images/button_sdk.jpg');
+	background: url('../images/button_sdk.jpg');
 }
-.macbook .row .cell:first-child {
-	width: 30%;
-	text-align: right;
-	padding-right: 40px;
-}
-.macbook .row .cell:first-child img {
-	width: 100%;
-}
-.macbook .row .cell .icons{
-	max-width: 744px;
-	margin: 0 auto;
-/*	background-color: #fff;*/
-}
-.macbook .row .cell .icons ul {
-	list-style: none;
-	margin: 0;
-	padding: 10px 0;
-	width: 100%;
-	margin: auto;
-	text-align: center;
-}
-.macbook .row .cell .icons ul li {
-	margin-left: -4px;
-	display: inline-block;
-	width: 16%;
-	margin-bottom: 10px;
-	box-sizing: border-box;
-}
-.macbook .row .cell .icons ul li img {
-	display: block;
-	margin: auto;
-}
+/*==============MacBook===========================*/
+
 .footer {
 	background-color: rgba(41, 48, 71, 0.03);
 	overflow: hidden;
@@ -581,28 +582,47 @@ body {
 #login_panel .body form .hint a:hover {
 	text-decoration: underline;
 }
-@media (min-width: 1920px) {
+@media (min-width: 1400px) {
 	.features .row .cell {
 		padding: 0 4%;
 	}
+	.features .row .cell .caption {
+		padding: 0 10%;
+	}
+	.features .row .cell .caption p {
+		max-width: 450px;
+	}
 	.macbook {
 		display: table;
-		padding: 80px 4.14%;
+		padding: 80px 10.14%;
 		background-color: rgba(41, 48, 71, 0.03);
 		width: 100%;
 		box-sizing: border-box;
-/*		background-color: #f00;*/
 	}
-	.macbook .row .cell .text-wrapper{
-/*		padding: 0 140px;*/
-		margin: auto;
+/*	.macbook */
+	.macbook .media-object{
+		width: 25%;
+	}
+
+	.macbook .media-content ul{
+		max-width: 774px;
 		box-sizing:border-box;
+		margin: auto;
+		
+	}
+	.macbook .media-content .text-wrapper {
+		margin: auto;
+		box-sizing: border-box;
+		max-width: 724px;
+		padding: 20px 0;
+	}
+	.macbook .media-content #download{
+		padding: 0;
 		max-width: 674px;
+		max-width: 724px;
+		margin: auto;
 	}
 }
-
-/* Large desktop */
-
 @media (max-width: 979px) {
 	.logos .item {
 		width: 33.333333333333%;
@@ -617,28 +637,24 @@ body {
 	.logos .item:nth-child(15) {
 		border-bottom: 2px solid #fff;
 	}
+	/*=================================================Features===*/
 	.features {
-		display: table;
-		display: table;
+		display: block;
 		width: 100%;
-		box-sizing: border-box;
-		text-align: center;
-		background-color: #f5f5f5;
-		padding: 40px 2%;
 	}
 	.features .row .cell {
 		display: block;
 		width: 100%;
-		clear: both;
-		overflow: hidden;
 		padding: 20px 0;
 	}
 	.features .row .cell img {
 		float: left;
 		margin-right: 30px;
+		width: 24%;
+		margin-top: 6%;
 	}
 	.features .row .cell .caption {
-		padding: 0 10px;
+		padding-left: 30%;
 	}
 }
 /* Portrait tablet to landscape and desktop */
@@ -694,6 +710,24 @@ body {
 	.logos .item:nth-child(3n) {
 		border-right: none;
 	}
+	/*=================================================Features===*/
+	.features {
+		display: block;
+	}
+	.features .row .cell {
+		display: block;
+		padding: 20px 20px;
+		box-sizing: border-box;
+	}
+	.features .row .cell img {
+		float: none;
+		width: 40%;
+	}
+	.features .row .cell .caption {
+		padding-left: 0;
+		text-align: justify;
+	}
+	/*=================================================Features===*/
 	.macbook {
 		background-color: #eeeef0;
 	}
@@ -761,57 +795,39 @@ body {
 }
 @media (max-width: 579px) {
 	.banner .scroll-control {
-		position: absolute;
-		right: 0px;
-		left: 0;
-		margin: auto;
 		width: 100%;
 		text-align: center;
-		bottom: 20px;
 	}
 	.banner .scroll-control img {
 		width: 100px;
 	}
-	.features {
-		padding: 20px 0 0 0;
-	}
-	.features .row {
+	.banner .reserve {
+		padding: 0;
+		margin: 0;
+		text-align: center;
 		display: block;
+		width: 100%;
 	}
-	.features .row .cell {
-		display: block;
+	.banner .reserve .form {
+		text-align: center;
 		width: 90%;
 		margin: auto;
-		margin-bottom: 20px;
 	}
-	.features .row .cell img {
-		float: none;
-		margin-right: 30px;
-	}
-	.features .row .cell .caption ul {
-		display: block;
+	.banner .reserve .form input[type='text'] {
 		width: 70%;
-		margin: auto;
-	}
-	.macbook .row .cell .icons ul {
-		list-style: none;
-		margin: 0;
-		padding: 20px 0 0 0;
-		width: 100%;
-		margin: auto;
-		text-align: center;
-	}
-	.macbook .row .cell .icons ul li {
-		margin-left: -4px;
-		display: inline-block;
-		width: 33.333333%;
-		margin-bottom: 10px;
 		box-sizing: border-box;
 	}
-	.macbook .row .cell .icons ul li img {
-		display: block;
-		margin: auto;
+	.banner .reserve .form input[type='submit'] {
+		width: 30%;
+		box-sizing: border-box;
 	}
+	/*========================Macbook===================*/
+	.macbook .media-content ul li {
+		width: 33.3333333333333%;
+		box-sizing: border-box;
+		margin-bottom: 10px;
+	}
+	/*========================Macbook===================*/
 	.footer .social-link {
 		float: none;
 		width: 80%;
@@ -874,10 +890,10 @@ body {
 		margin: 5px 0;
 	}
 }
-
 /*
 	< 480
 */
+
 @media (max-width: 480px) {
 	.banner .bg_mac {
 		background: url('../images/mac_bg.png');
@@ -979,49 +995,27 @@ body {
 	.logos .item:nth-child(18) {
 		border-bottom: none;
 	}
+	/*=============================================Features=====	*/
+	.features {
+		padding: 20px 0 40px 0;
+	}
+	.features .row .cell {
+		padding: 0 20px;
+		box-sizing: border-box;
+	}
 	.features .row .cell img {
 		display: block;
-		width: 70%;
+		width: 60%;
 		margin: auto;
+		padding: 0;
 	}
 	.features .row .cell .caption ul {
 		display: block;
 		width: 100%;
 	}
-	.macbook {
-		padding: 50px 0;
-		background-color: #eeeef0;
-	}
-	.macbook .row .cell {
-		display: block;
-	}
-	.macbook .row .cell .text-wrapper {
-		width: 100%;
-		padding: 10px 20px;
-		box-sizing: border-box;
-	}
-	.macbook .row .cell #download {
-		width: 80%;
-		padding-top: 20px;
-		text-align: right;
-	}
-	.macbook .row .cell #download a {
-		background-color: #81b7ff;
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #88baff), color-stop(100%, #56a0ff));
-		box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-		color: #fff;
-		font-size: 12px;
-		padding: 6px 12px;
-		border-radius: 4px;
-		text-decoration: none;
-	}
-	.macbook .row .cell #download a:hover {
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #89b8f9), color-stop(100%, #5084ed));
-	}
-	.macbook .row .cell:first-child {
-		width: 100%;
-		text-align: center;
-	}
+	/*=============================================Features=====	*/
+	/*===============================MacBook===================	*/
+	/*===============================MacBook===================	*/
 }
 @media (max-width: 380px) {
 	.footer .social-link {
