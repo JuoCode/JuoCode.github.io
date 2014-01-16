@@ -1,0 +1,272 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Deskapp Track</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1" name="viewport">
+	<link rel="stylesheet" src="styles/normalize.css" />
+	<link rel="stylesheet" href="styles/main.css">
+	<script src="javascripts/jquery.js"></script>
+<!--	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>-->
+	<script src="javascripts/app.js"></script>
+</head>
+
+<body>
+	<div class="banner">
+		<div class="header">
+			<div class="logo">
+				<img src="images/logo.png" alt="" />
+			</div>
+			<div class="social-icon">
+				<span>
+					<img src="images/social_Twitter.png" width="20" alt="" />
+					<p>Twitter</p>
+				</span>
+				<span>
+					<img src="images/social_Facebook.png" width="20" />
+					<p>Facebook</p>
+				</span>
+				<span>
+					<img src="images/social_google+.png" width="20" />
+					<p>Google+</p>
+				</span>
+				<span>
+					<img src="images/social_linkedin.png" width="20" />
+					<p>Linkedin</p>
+				</span>
+			</div>
+
+		</div>
+
+		<div class="login-control">
+			<div class="btn-group">
+				<a href="javascript:showSignUpPanel()" class="left" onclick="showSignUpPanel()">Sign Up</a>
+				<a href="javascript:showSignInPanel()" class="right" onclick="showSignInPanel()">Sign In</a>
+			</div>
+		</div>
+
+		<div class="caption">
+
+			<h1 class="bt">We are free</h1>
+			<div class="subt">Analyse your OS X application to obtain more audiences.</div>
+
+		</div>
+
+		<div class="reserve">
+			<div class="form group">
+				<input type="text" class="left" placeholder="Your Email" />
+				<input type="submit" class="right" value="Reverse" />
+			</div>
+			<div class="hint">SDK is Avaliable in Alpha, More functions is coming soon.</div>
+		</div>
+
+		<div class="scroll-control">
+			<img src="images/scrolldown.png" alt="" onclick="scrollToLogos()" />
+		</div>
+
+	</div>
+
+	<div class="logos">
+		<div class="item">
+			<a href="#"><img src="images/our_clients.png" alt="" /></a>
+		</div>		
+		<div class="item"><img src="images/clients_01.png" alt=""></div>
+		<div class="item"><img src="images/clients_02.png" alt=""></div>
+		<div class="item"><img src="images/clients_03.png" alt=""></div>
+		<div class="item"><img src="images/clients_04.png" alt=""></div>
+		<div class="item"><img src="images/clients_01.png" alt=""></div>
+		<div class="item"><img src="images/clients_06.png" alt=""></div>
+		<div class="item"><img src="images/clients_07.png" alt=""></div>
+		<div class="item"><img src="images/clients_08.png" alt=""></div>
+		<div class="item"><img src="images/clients_09.png" alt=""></div>
+		<div class="item"><img src="images/clients_10.png" alt=""></div>
+		<div class="item"><img src="images/clients_11.png" alt=""></div>
+		<div class="item"><img src="images/clients_12.png" alt=""></div>
+		<div class="item"><img src="images/clients_13.png" alt=""></div>
+		<div class="item"><img src="images/clients_14.png" alt=""></div>
+		<div class="item"><img src="images/clients_15.png" alt=""></div>
+		<div class="item"><img src="images/clients_16.png" alt=""></div>
+		<div class="item">
+			<a href="#"><img src="images/view_more.png" alt="" /></a>
+		</div>
+	</div>
+
+	<div class="features">
+		<div class="row">
+
+			<div class="cell">
+				<img src="images/text_users.png" alt="" />
+				<div class="caption">
+					<h3>Understand Your Users</h3>
+					<p>Multi-dimensional statistical usage of users help you accurately analysis the habit of users.</p>
+					<ul>
+						<li>The page users look at longest.</li>
+						<li>The time users frequently use your application.</li>
+						<li>The prop user favorite purchase.</li>
+					</ul>
+				</div>
+			</div>
+			<div class="cell">
+				<img src="images/text_apps.png" alt="" />
+				<div class="caption">
+					<h3>Know Your Application</h3>
+					<p>
+						The efficient and stable real-time statistical help you master the application state
+					</p>
+					<ul>
+						<li>Include theme at runtime to render</li>
+						<li>Include theme at runtime to render</li>
+						<li>Include theme at runtime to render</li>
+					</ul>
+				</div>
+			</div>
+			<div class="cell">
+				<img src="images/text_market.png" alt="" />
+				<div class="caption">
+					<h3>Acquaint Your Market</h3>
+					<p>Integration of the mass application of data statistics of theindustry average level to help you understand the market.</p>
+					<ul>
+						<li>Include theme at runtime to render</li>
+						<li>Include theme at runtime to render</li>
+						<li>Include theme at runtime to render</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="macbook">
+		<div class="row">
+			<div class="cell">
+				<img src="images/screenshot.png" alt="" />
+			</div>
+			<div class="cell">
+				<div class="icons">
+					<ul>
+						<li><img src="./images/icon_app.png" alt=""/><span>App</span></li>
+						<li><img src="./images/icon_games.png" alt=""/><span>Games</span></li>
+						<li><img src="./images/icon_trends.png" alt=""/><span>Trends</span></li>
+						<li><img src="./images/icon_events.png" alt=""/><span>Events</span></li>
+						<li><img src="./images/icon_errors.png" alt=""/><span>Errors</span></li>
+						<li><img src="./images/icon_terminal.png" alt=""/><span>Terminal</span></li>
+					</ul>
+				</div>
+				<div class="text-wrapper">
+					We put the SDK contains sample code and API for integrating on our Github, you can download for free and integrate with your application.
+				</div>
+				<div id="download">
+					<a href="#" class="btn">SDK Download</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="nav">
+			<ul>
+				<li>
+					<a href="#">Home</a>
+				</li>
+				<li>
+					<a href="#">About</a>
+				</li>
+				<li>
+					<a href="#">Contact</a>
+				</li>
+				<li>
+					<a href="#">Privacy</a>
+				</li>
+				<li>
+					<a href="#">Help</a>
+				</li>
+				<li>
+					<a href="#">Blog</a>
+				</li>
+			</ul>
+		</div>
+		<div class="social-link">
+			li
+    <ul>
+<!--
+      <li class="linkedin">
+        <script src="//platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+        <script type="IN/Share" data-counter="right"></script>
+      </li>
+      <li class="google">
+        <g:plusone></g:plusone>
+      </li>
+      <li class="facebook">
+        <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
+      </li>
+      <li class="twitter">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="gjdrift">Tweet</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </li>
+-->
+    </ul>
+
+		</div>
+	</div>
+	
+	<!-- Cover div -->
+	<div class="dark_cover"></div>
+	
+	<!--	Login panel-->
+	<div id="login_panel" class="modal modal_hide">
+		<div class="header">
+			<img src="./images/logo.png" alt="">
+			<img src="./images/close_normal.png" alt="">
+		</div>
+		<div class="body">
+			<form action="">
+				<input type="text" placeholder="Account">
+				<input type="password" placeholder="Password">
+				<div class="actions">
+					<label for="remember" class="remember">
+						<input type="checkbox" id="remember"> Remember me
+					</label>
+					<input type="submit" value="Sign In">
+				</div>
+				<div class="hint">
+					<a href="#">Forgot password</a>
+					<span>Dont't have an account? <a href="javascript:showSignUpPanel()" onclick="showSignUpPanel()"> Sign up now.</a> </span>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+	
+	
+	<!--	Sign up panel-->
+	<div id="signup_panel" class="modal modal_hide">
+		<div class="header">
+			<img src="./images/logo.png" alt="">
+		</div>
+		<div class="body">
+			<form action="">
+				<input type="text" placeholder="Email">
+				<input type="password" placeholder="Password">
+				<input type="password" placeholder="Confirm Password">
+				<br/>
+				<input type="text" placeholder="Your Name">
+				<input type="text" placeholder="Company Name">
+				<input type="text" placeholder="Official Website(optional)">
+				<input type="text" placeholder="Invitation Code">
+				<div class="actions">
+					<label for="accept" class="accept">
+						<input type="checkbox" id="accept"> I accept all <a href="#">terms</a>
+					</label>
+					<input type="submit" value="Sign Up">
+				</div>
+				<div class="hint">
+					<a href="#">Forgot password</a>
+					<span>Have an account. <a href="javascript:showSignInPanel()" onclick="showSignInPanel()"> Sign in now.</a> </span>
+				</div>
+			</form>
+		</div>
+	</div>
+	
+</body>
+
+</html>
