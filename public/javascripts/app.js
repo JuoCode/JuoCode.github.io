@@ -22,3 +22,7 @@ function showSignUpPanel(){
 	$('#login_panel').addClass('modal_hide');
 	$('#signup_panel').removeClass('modal_hide');
 }
+
+function closeModal(ele){
+	$(ele).parents('modal').addClass('modal_hide')
+}

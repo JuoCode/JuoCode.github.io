@@ -8,6 +8,7 @@ body {
 	padding: 0;
 	margin: 0;
 	background-image: url("../images/twill.png");
+	z-index: 2;
 }
 @font-face {
 	font-family: goodtime;
@@ -18,45 +19,76 @@ body {
 	src: url("helvetica-35-thin.ttf");
 }
 .banner {
-	background: url('../images/punctate.png'), url("../images/shade_fg.png"), url("../images/mac_bg.png");
-	background-position: left, left, right;
-	background-size: auto auto, 100% 100%, auto 100%;
-	background-repeat: repeat, no- repeat, no-repeat;
 	height: 680px;
 	min-height: 480px;
 	position: relative;
 }
+.banner .bg_mac {
+	background: url('../images/mac_bg.jpg');
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	z-index: 1;
+	background-position: right center;
+	opacity: .5;
+	filter:alpha(opacity=50);	
+}
+.banner .bg_punctate {
+	background: url('../images/punctate.png');
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	z-index: 2;
+}
+.banner .bg_shade {
+	background: url('../images/shade_fg.png');
+	height: 100%;
+	position: absolute;
+	width: 100%;
+	z-index: 2;
+	-webkit-background-size: 100% auto;
+	background-size: 100% 100%;
+}
 .banner .header {
 	height: 60px;
 	background-color: rgba(39, 65, 90, 0.3);
+	position: relative;
+	z-index: 20;
 }
 .banner .header .logo {
 	padding: 10px 0 0 15px;
 	float: left;
+	z-index: 20;
 }
 .banner .header .social-icon {
 	width: 250px;
 	padding: 10px 0 0 10px;
 	float: right;
 	font-size: 0px;
+	z-index: 20;
 }
 .banner .header .social-icon span {
 	display: inline-block;
 	width: 60px;
 	text-align: center;
+	z-index: 20;
 }
 .banner .header .social-icon span p {
 	font-size: 6px;
 	margin: 0;
 	margin-top: 5px;
 	color: #405071;
+	z-index: 20;
 }
 .banner .login-control {
 	text-align: right;
 	padding-right: 20px;
+	position: relative;
+	z-index: 20;
 }
 .banner .login-control .btn-group {
 	padding: 10px;
+	z-index: 20;
 }
 .banner .login-control .btn-group a {
 	line-height: 40px;
@@ -67,6 +99,7 @@ body {
 	text-decoration: none;
 	color: #fff;
 	background-color: rgba(24, 56, 110, 0.45);
+	z-index: 20;
 }
 .banner .login-control .btn-group a:hover {
 	background-color: rgba(24, 56, 110, 0.8);
@@ -83,6 +116,9 @@ body {
 .banner .caption {
 	max-width: 100%;
 	padding-left: 8%;
+	z-index: 20;
+	position: relative;
+	z-index: 20;
 }
 .banner .caption h1.bt {
 	text-transform: uppercase;
@@ -101,6 +137,7 @@ body {
 	position: absolute;
 	margin-left: 8%;
 	bottom: 200px;
+	z-index: 20;
 }
 .banner .reserve form {
 	vertical-align: top;
@@ -147,6 +184,7 @@ body {
 	right: 20px;
 	bottom: 20px;
 	cursor: pointer;
+	z-index: 20;
 }
 .group .left {
 	border-top-left-radius: 5px;
@@ -195,20 +233,23 @@ body {
 	display: block;
 	margin: 0 auto;
 	max-width: 100%;
-	-webkit-filter: grayscale(100%);
 	-webkit-transition: all .25s ease;
 	-moz-transition: all .25s ease;
 	-ms-transition: all .25s ease;
 	-o-transition: all .25s ease;
 	transition: all .25s ease;
-/* 	height: 60px; */
 	width: 70%;
+	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+	filter: gray; 
+	-webkit-filter: grayscale(100%);
 }
-.logos .item img:first, .logos .item img:last{
+.logos .item img:first,
+.logos .item img:last {
 	-webkit-filter: none;
 }
 .logos .item:hover img {
 	-webkit-filter: none;
+	filter: none;
 }
 .features {
 	background-image: url("../images/twill.png");
@@ -232,7 +273,7 @@ body {
 	display: table-cell;
 }
 .features .row .cell img {
-/* 	border-radius: 120px; */
+	/* 	border-radius: 120px; */
 }
 .features .row .cell .caption {
 	text-align: left;
@@ -389,8 +430,8 @@ body {
 	z-index: 99;
 	display: none;
 }
-.modal_hide{
-	-webkit-transform:scale(.0);
+.modal_hide {
+	-webkit-transform: scale(.0);
 	opacity: .5;
 }
 .modal {
@@ -413,14 +454,27 @@ body {
 	display: block;
 	margin: auto;
 }
-#signup_panel, #login_panel {
+.modal .header .modal_closer {
+	position: absolute;
+	top: 3px;
+	right: 3px;
+	width: 18px;
+	height: 18px;
+	cursor: pointer;
+	background-image: url('../images/close_normal.png');
+}
+.modal .header .modal_closer:hover {
+	background-image: url('../images/close_hover.png');
+}
+#signup_panel,
+#login_panel {
 	position: fixed;
 	top: 80px;
 	left: 0;
 	right: 0;
 	margin: 0 auto;
 	width: 480px;
-/*	height: 320px;*/
+	/*	height: 320px;*/
 	z-index: 100;
 }
 #signup_panel .body,
@@ -447,12 +501,17 @@ body {
 	padding: 10px;
 	font-size: 14px;
 }
-
 #signup_panel .body form input[type='text'],
-#signup_panel .body form input[type='password']{outline:none;},
+#signup_panel .body form input[type='password'] {
+	outline: none;
+}
+,
 #signup_panel .body form .actions label,
 #login_panel .body form input[type='text'],
-#login_panel .body form input[type='password']{outline:none;},
+#login_panel .body form input[type='password'] {
+	outline: none;
+}
+,
 #login_panel .body form .actions label {
 	font-size: 14px;
 }
@@ -465,18 +524,21 @@ body {
 #signup_panel .body form .actions input[type='submit'],
 #login_panel .body form .actions input[type='submit'] {
 	float: right;
-	margin-top: 10px;
+	/*	margin-top: 10px;*/
 	background-color: #5194be;
 	color: #fff;
 	line-height: 30px;
 	padding: 4px 20px;
 	border: none;
 	border-radius: 5px;
-	cursor:pointer;
+	cursor: pointer;
 	font-size: 14px;
 	font-weight: bold;
+	width: 115px;
+	height: 36px;
+	cursor: pointer;
+	background: url('../images/submit.png');
 }
-
 #signup_panel .body form .actions input[type='submit']:focus,
 #signup_panel .body form .actions input[type='submit']:hover,
 #login_panel .body form .actions input[type='submit']:focus,
@@ -484,21 +546,37 @@ body {
 	outline: none;
 	background-color: #5da4d1;
 }
-
 #signup_panel .body form .hint,
-#login_panel .body form .hint{
+#login_panel .body form .hint {
 	font-size: 14px;
 	padding: 10px 0;
 }
-#signup_panel .body form .hint a{color: #4f90ba;text-decoration: none;}
-#signup_panel .body form .hint span{float: right;}
-#signup_panel .body form .hint span a{float: none;}
-#signup_panel .body form .hint a:hover{text-decoration: underline;}
-
-#login_panel .body form .hint a{color: #4f90ba;text-decoration: none;}
-#login_panel .body form .hint span{float: right;}
-#login_panel .body form .hint span a{float: none;}
-#login_panel .body form .hint a:hover{text-decoration: underline;}
+#signup_panel .body form .hint a {
+	color: #4f90ba;
+	text-decoration: none;
+}
+#signup_panel .body form .hint span {
+	float: right;
+}
+#signup_panel .body form .hint span a {
+	float: none;
+}
+#signup_panel .body form .hint a:hover {
+	text-decoration: underline;
+}
+#login_panel .body form .hint a {
+	color: #4f90ba;
+	text-decoration: none;
+}
+#login_panel .body form .hint span {
+	float: right;
+}
+#login_panel .body form .hint span a {
+	float: none;
+}
+#login_panel .body form .hint a:hover {
+	text-decoration: underline;
+}
 /* Large desktop */
 
 @media (max-width: 979px) {
@@ -745,12 +823,34 @@ body {
 		width: 25%;
 	}
 }
-/* Landscape phones and down */
 
+
+/*
+	< 480
+*/
 @media (max-width: 480px) {
-	.banner {
-		background-position: left, left, right;
-		background-size: auto auto, 130% 100%, auto 100%;
+	.banner .bg_mac {
+		background: url('../images/mac_bg.png');
+		height: 100%;
+		position: absolute;
+		width: 100%;
+		z-index: 1;
+		background-position: 60% center;
+	}
+	.banner .bg_punctate {
+		background: url('../images/punctate.png');
+		height: 100%;
+		position: absolute;
+		width: 100%;
+		z-index: 2;
+	}
+	.banner .bg_shade {
+		background: url('../images/shade_fg.png');
+		height: 100%;
+		position: absolute;
+		width: 100%;
+		z-index: 2;
+		background-size: 100% 100%;
 	}
 	.banner .header {
 		height: auto;
@@ -783,6 +883,13 @@ body {
 	.banner .social-icon p {
 		display: none;
 	}
+	.banner .login-control{
+		padding: 0px 0;
+	}
+	.banner .login-control .btn-group a{
+		line-height: 30px;
+		font-size: 14px;
+	}
 	.banner .reserve {
 		left: 0;
 		right: 0;
@@ -790,8 +897,8 @@ body {
 		margin-top: 8%;
 		margin-left: 0;
 		text-align: center;
-		position: static;
 		padding: 0 10px;
+		bottom: 10%!important;
 	}
 	.banner .reserve input[type='text'] {
 		width: 66%;
