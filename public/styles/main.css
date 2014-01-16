@@ -31,7 +31,8 @@ body {
 	z-index: 1;
 	background-position: right center;
 	opacity: .5;
-	filter:alpha(opacity=50);	
+	filter: alpha(opacity=50);
+	background-size: auto 100%;
 }
 .banner .bg_punctate {
 	background: url('../images/punctate.png');
@@ -240,7 +241,7 @@ body {
 	transition: all .25s ease;
 	width: 70%;
 	filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
-	filter: gray; 
+	filter: gray;
 	-webkit-filter: grayscale(100%);
 }
 .logos .item img:first,
@@ -448,6 +449,7 @@ body {
 	padding: 14px;
 	text-align: center;
 	background: url('..//images/top_bg.png');
+	background-position: right top;
 }
 .modal .header img {
 	line-height: 80px;
@@ -474,12 +476,12 @@ body {
 	right: 0;
 	margin: 0 auto;
 	width: 480px;
-	/*	height: 320px;*/
 	z-index: 100;
+	max-width: 100%;
 }
 #signup_panel .body,
 #login_panel .body {
-	background-color: #01ffff;
+	background-color: rgb(236, 249, 255);
 }
 #signup_panel .body form,
 #login_panel .body form {
@@ -524,7 +526,6 @@ body {
 #signup_panel .body form .actions input[type='submit'],
 #login_panel .body form .actions input[type='submit'] {
 	float: right;
-	/*	margin-top: 10px;*/
 	background-color: #5194be;
 	color: #fff;
 	line-height: 30px;
@@ -580,13 +581,6 @@ body {
 /* Large desktop */
 
 @media (max-width: 979px) {
-	/*
-	.banner{
-		background-position: auto, left, right;
-		background-size: auto auto, auto 100%, auto 100%;
-		background-repeat: repeat, no- repeat, no-repeat;
-	}
-*/
 	.logos .item {
 		width: 33.333333333333%;
 		padding: 20px 5px;
@@ -822,8 +816,41 @@ body {
 	.footer .social-link ul li.twitter {
 		width: 25%;
 	}
+	#login_panel,
+	#signup_panel {
+		position: absolute;
+		top: 80px;
+		left: 0;
+		right: 0;
+		width: 90%;
+		top: 20px;
+		height: auto;
+	}
+	#login_panel .header img,
+	#signup_panel .header img {
+		width: 80%;
+	}
+	#login_panel .body,
+	#signup_panel .body {
+		height: auto;
+		overflow: hidden;
+		padding-bottom: 10px;
+	}
+	#login_panel .body form,
+	#signup_panel .body form {
+		padding: 10px 10px;
+	}
+	#signup_panel .body form .actions input[type='submit'],
+	#login_panel .body form .actions input[type='submit'] {
+		float: none;
+		width: 100%;
+		border: none;
+		background: url('../images/submit.png');
+		-webkit-background-size: 100% 100%;
+		background-size: 100% 100%;
+		margin: 5px 0;
+	}
 }
-
 
 /*
 	< 480
@@ -836,6 +863,7 @@ body {
 		width: 100%;
 		z-index: 1;
 		background-position: 60% center;
+		background-size: auto 100%;
 	}
 	.banner .bg_punctate {
 		background: url('../images/punctate.png');
@@ -883,10 +911,10 @@ body {
 	.banner .social-icon p {
 		display: none;
 	}
-	.banner .login-control{
+	.banner .login-control {
 		padding: 0px 0;
 	}
-	.banner .login-control .btn-group a{
+	.banner .login-control .btn-group a {
 		line-height: 30px;
 		font-size: 14px;
 	}
