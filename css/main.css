@@ -265,3 +265,7 @@ header .about:hover, header .picture:hover {
   font-style: italic;
   font-size: 14px;
 }
+
+.post ul{
+  line-height: 1.5;
+}

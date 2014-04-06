@@ -116,5 +116,38 @@ var f = new F();
 
 
 f.__proto__ === f.constructor.prototype;   //true
-f.__proto-- === F.prototype                              //true
+f.__proto__ === F.prototype                //true
 {% endhighlight%}
+
+
+## 原型链和原型继承
+
+原型链在属性查找时起作用，举例如下
+
+{% highlight javascript%}
+
+function Super(){}
+Super.prototype.version = '1.0';
+
+function App(){}
+App.prototype = new Super();
+
+function SubApp(){}
+SubApp.prototype = new App();
+
+var app = new SubApp();
+console.log(app.version);
+
+{% endhighlight%}
+
+从下往上看这段代码
+
+- 创建SubApp的一个实例app，打印app的version属性，这时会去这个对象内查找，发现没有version属性
+- 然后去这个对象的原型对象，也就是`SubApp.prototype`中去找，还没有，继续沿原型链往上
+- 此时会找到`App.prototype`，发现App.prototype是`Super`的一个实例，此实例有`version`属性，返回
+
+关键点:
+
+通过`Fn.prototype = new OtherFn();`实现原型继承
+
+
