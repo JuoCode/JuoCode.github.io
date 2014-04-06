@@ -213,6 +213,14 @@ header .about:hover, header .picture:hover {
   border-left: 4px solid #81b625;
 }
 
+.post h3{
+  padding-left: 10px;
+  border-left: 4px solid #9BCC45;
+  margin-left: 10px;
+  font-size: 16px;
+  margin-top: 30px;
+}
+
 .post p{
   /*padding-left: 10px;*/
   color: #444;
@@ -229,4 +237,26 @@ header .about:hover, header .picture:hover {
 .post .highlight pre code span{
   font-family: 'Inconsolata', sans-serif;
 
+}
+
+.post blockquote{
+  
+  margin-left: 20px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.post blockquote::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-left: 4px solid #eee;
+}
+
+.post blockquote p{
+  color: #999;
+  font-style: italic;
+  font-size: 14px;
 }
