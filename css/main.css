@@ -234,6 +234,11 @@ header .about:hover, header .picture:hover {
   padding: 10px;
 }
 
+.post p > code{
+  background-color: #BCE27A;
+  padding: 2px 4px;
+  margin: 0 4px;
+}
 .post .highlight pre code span{
   font-family: 'Inconsolata', sans-serif;
 
