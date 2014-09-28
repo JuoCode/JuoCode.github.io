@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var $body, $counters, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, appeared, emailRegex, img, orderCounter, willHide;
+    var $body, $counters, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, appeared, emailRegex, img, isHover, orderCounter, switchItem, willHide;
     orderCounter = 361840;
     $body = $('body');
     $loginform = $('#loginform');
@@ -77,12 +77,8 @@
     $('.rightside .close').click(function() {
       return $body.removeClass('show-right');
     });
-    $('#order-count, #order-status, #order-seal, #order-sign').click(function() {
-      var $t, _i;
-      $t = $(this);
-      if ($t.hasClass('active')) {
-        return;
-      }
+    switchItem = function($t) {
+      var _i;
       _i = $t.index();
       $slideItemActive.fadeOut(250);
       $slideItemActive = $($slideItems[_i]);
@@ -90,9 +86,28 @@
       $slideIndicatorActive.removeClass('active');
       $slideIndicatorActive = $t;
       return $slideIndicatorActive.addClass('active');
+    };
+    isHover = false;
+    $('#order-count, #order-status, #order-seal, #order-sign').mouseover(function() {
+      var $t;
+      isHover = true;
+      $t = $(this);
+      if ($t.hasClass('active')) {
+        return;
+      }
+      return switchItem($t);
+    });
+    $('#order-count, #order-status, #order-seal, #order-sign').mouseout(function() {
+      return isHover = false;
+    });
+    $('#order-count, #order-status, #order-seal, #order-sign').click(function() {
+      return switchItem($(this));
     });
     setInterval(function() {
       var max, _n;
+      if (isHover) {
+        return;
+      }
       _n = $slideIndicatorActive.index();
       max = $slideIndicators.length;
       if (_n === max - 1) {
