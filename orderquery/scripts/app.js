@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var $body, $counters, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, appeared, emailRegex, orderCounter, willHide;
+    var $body, $counters, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, appeared, emailRegex, img, orderCounter, willHide;
     orderCounter = 361840;
     $body = $('body');
     $loginform = $('#loginform');
@@ -142,7 +142,16 @@
         return alert('登录成功');
       }, 1000);
     });
-    return $body.append($('#left-side-template').html());
+    if (Image) {
+      img = new Image();
+      img.onload = function() {
+        return $body.append($('#left-side-template').html());
+      };
+      img.onerror = function() {
+        return $body.append($('#left-side-template').html());
+      };
+      return img.src = 'images/bg.jpg';
+    }
   });
 
 }).call(this);
