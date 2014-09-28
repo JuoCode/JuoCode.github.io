@@ -102,7 +102,7 @@
       }
       return $($slideIndicators[_n]).click();
     }, 5000);
-    return $('#loginform .action button').click(function() {
+    $('#loginform .action button').click(function() {
       var $error, $form, $t, company, email, params, password, target;
       $t = $(this);
       $form = $('#loginform');
@@ -142,6 +142,7 @@
         return alert('登录成功');
       }, 1000);
     });
+    return $body.append($('#left-side-template').html());
   });
 
 }).call(this);
