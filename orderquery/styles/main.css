@@ -112,7 +112,7 @@ body.show-right .main .rightside-toggle-wrapper {
 .content .content-wrapper .responsive-block {
   height: 27px;
 }
-@media screen and (min-height: 900px) {
+@media screen and (min-height: 899px) {
   /* line 128, ../../src/styles/main.scss */
   .content .content-wrapper .responsive-block {
     height: 60px;
