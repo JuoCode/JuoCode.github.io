@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var $body, $counters, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, appeared, captured, emailRegex, errorField, img, initLeftBtnEvent, isHover, orderCounter, showLeft, switchItem, willHide;
+    var $body, $counters, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, captured, emailRegex, errorField, img, initLeftBtnEvent, isHover, orderCounter, showLeft, switchItem;
     orderCounter = 361840;
     $body = $('body');
     $loginform = $('#loginform');
@@ -22,7 +22,7 @@
         innerHtml = innerHtml += "<span>" + i + "</span>";
       }
       return $counters.html(innerHtml);
-    }, 1500);
+    }, 5000);
     showLeft = false;
     $('.leftside-toggle').click(function() {
       $body.toggleClass('show-left');
@@ -30,31 +30,6 @@
     });
     $('.content').click(function() {
       return $body.removeClass('show-left');
-    });
-    willHide = true;
-    appeared = false;
-    $('.driver-client-hover').mouseover(function() {
-      if (appeared) {
-        return;
-      }
-      $('.dropdown-wrapper').fadeIn(300);
-      return appeared = true;
-    });
-    $('.driver-client-hover').mouseout(function() {
-      console.log('out hover');
-      return setTimeout(function() {
-        if (!willHide) {
-          return;
-        }
-        $('.dropdown-wrapper').fadeOut('fast');
-        return appeared = false;
-      }, 2000);
-    });
-    $('.dropdown-wrapper').mouseover(function() {
-      return willHide = false;
-    });
-    $('.dropdown-wrapper').mouseout(function() {
-      return willHide = true;
     });
     $('.toggle-signin, .toggle-signup').click(function() {
       var $t, target;
