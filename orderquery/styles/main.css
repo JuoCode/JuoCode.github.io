@@ -2,95 +2,95 @@
 /* line 5, ../../src/styles/main.scss */
 html,
 body {
-  height: 100%;
   font-size: 0;
+  height: 100%;
   background-color: #fff;
 }
 
-/* line 11, ../../src/styles/main.scss */
+/* line 13, ../../src/styles/main.scss */
 body {
   font-family: 'Microsoft YaHei', 'Helvetica Neue',Helvetica,Arial,sans-serif;
   overflow: hidden;
 }
-/* line 16, ../../src/styles/main.scss */
+/* line 18, ../../src/styles/main.scss */
 body.show-left .main {
   left: 256px;
   background-position: -156px bottom;
 }
-/* line 20, ../../src/styles/main.scss */
+/* line 22, ../../src/styles/main.scss */
 body.show-left .main .top-shadow {
   box-shadow: 0 0 140px 20px rgba(0, 0, 0, 0.8);
 }
-/* line 25, ../../src/styles/main.scss */
+/* line 27, ../../src/styles/main.scss */
 body.show-left .leftside-toggle .more {
   display: none;
 }
-/* line 28, ../../src/styles/main.scss */
+/* line 30, ../../src/styles/main.scss */
 body.show-left .leftside-toggle .close {
   display: block;
 }
-/* line 34, ../../src/styles/main.scss */
+/* line 36, ../../src/styles/main.scss */
 body.show-right .rightside {
   right: 0;
 }
-/* line 37, ../../src/styles/main.scss */
+/* line 39, ../../src/styles/main.scss */
 body.show-right .main .rightside-toggle-wrapper {
   opacity: 0;
 }
 
-/* line 61, ../../src/styles/main.scss */
+/* line 63, ../../src/styles/main.scss */
 .main {
   font-size: 14px;
   position: relative;
   z-index: 2;
   left: 0;
   height: 100%;
+  background-image: url("../images/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: cover;
   -webkit-transition: all 0.25s;
   -moz-transition: all 0.25s;
   -o-transition: all 0.25s;
   transition: all 0.25s;
-  background-image: url("../images/bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right bottom;
 }
-/* line 75, ../../src/styles/main.scss */
+/* line 78, ../../src/styles/main.scss */
 .main .top-shadow {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  box-shadow: 0 0 120px 10px rgba(0, 0, 0, 0.8);
   -webkit-transition: all 0.25s;
   -moz-transition: all 0.25s;
   -o-transition: all 0.25s;
   transition: all 0.25s;
-  box-shadow: 0 0 120px 10px rgba(0, 0, 0, 0.8);
 }
 
-/* line 88, ../../src/styles/main.scss */
+/* line 91, ../../src/styles/main.scss */
 .content {
   display: table;
   width: 100%;
   height: 100%;
   text-align: center;
 }
-/* line 95, ../../src/styles/main.scss */
+/* line 98, ../../src/styles/main.scss */
 .content .content-wrapper {
   display: table-cell;
   vertical-align: middle;
 }
-/* line 99, ../../src/styles/main.scss */
+/* line 102, ../../src/styles/main.scss */
 .content .content-wrapper .logo {
   height: 86px;
   margin-bottom: 12px;
 }
-/* line 103, ../../src/styles/main.scss */
+/* line 106, ../../src/styles/main.scss */
 .content .content-wrapper .search-wrapper {
   position: relative;
   width: 496px;
   margin: 0 auto;
 }
-/* line 108, ../../src/styles/main.scss */
+/* line 111, ../../src/styles/main.scss */
 .content .content-wrapper .search-wrapper input {
   font-size: 13px;
   line-height: 20px;
@@ -101,43 +101,45 @@ body.show-right .main .rightside-toggle-wrapper {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.3);
 }
-/* line 120, ../../src/styles/main.scss */
+/* line 123, ../../src/styles/main.scss */
 .content .content-wrapper .search-wrapper .search-icon {
   position: absolute;
-  top: 16px;
-  right: 8px;
+  top: 5px;
+  right: 3px;
+  padding: 8px 4px;
+  cursor: pointer;
   color: #fff;
 }
-/* line 128, ../../src/styles/main.scss */
+/* line 135, ../../src/styles/main.scss */
 .content .content-wrapper .responsive-block {
   height: 27px;
 }
 @media screen and (min-height: 696px) {
-  /* line 128, ../../src/styles/main.scss */
+  /* line 135, ../../src/styles/main.scss */
   .content .content-wrapper .responsive-block {
     height: 40px;
   }
 }
 @media screen and (min-height: 779px) {
-  /* line 128, ../../src/styles/main.scss */
+  /* line 135, ../../src/styles/main.scss */
   .content .content-wrapper .responsive-block {
     height: 60px;
   }
 }
 @media screen and (min-height: 1200px) {
-  /* line 128, ../../src/styles/main.scss */
+  /* line 135, ../../src/styles/main.scss */
   .content .content-wrapper .responsive-block {
     height: 120px;
   }
 }
-/* line 135, ../../src/styles/main.scss */
+/* line 147, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container {
   position: relative;
   width: 680px;
   height: 420px;
   margin: 0 auto;
 }
-/* line 142, ../../src/styles/main.scss */
+/* line 154, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container > .item {
   position: absolute;
   z-index: 3;
@@ -147,7 +149,7 @@ body.show-right .main .rightside-toggle-wrapper {
   width: 100%;
   height: 100%;
 }
-/* line 153, ../../src/styles/main.scss */
+/* line 165, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container > .item .item-title {
   font-size: 28px;
   font-weight: 100;
@@ -155,7 +157,7 @@ body.show-right .main .rightside-toggle-wrapper {
   margin: 0;
   color: #fff;
 }
-/* line 162, ../../src/styles/main.scss */
+/* line 174, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container > .item .item-desc {
   font-size: 16px;
   font-weight: 100;
@@ -163,29 +165,29 @@ body.show-right .main .rightside-toggle-wrapper {
   margin: 0;
   color: #fff;
 }
-/* line 171, ../../src/styles/main.scss */
+/* line 183, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container > .item.active {
   z-index: 4;
   display: block;
   opacity: 1;
 }
-/* line 180, ../../src/styles/main.scss */
+/* line 192, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container .order-count .resp-block-t-c {
   height: 44px;
 }
-/* line 183, ../../src/styles/main.scss */
+/* line 195, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container .order-count .resp-block-c-b {
   height: 80px;
 }
-/* line 186, ../../src/styles/main.scss */
+/* line 198, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container .order-count .resp-block-b {
   height: 70px;
 }
-/* line 189, ../../src/styles/main.scss */
+/* line 201, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container .order-count .counters {
   font-size: 0;
 }
-/* line 191, ../../src/styles/main.scss */
+/* line 203, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container .order-count .counters span {
   font-family: Arial,sans-serif;
   font-size: 90px;
@@ -199,25 +201,25 @@ body.show-right .main .rightside-toggle-wrapper {
   border: 1px solid  #fff;
   border-radius: 10px;
 }
-/* line 208, ../../src/styles/main.scss */
+/* line 220, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container .order-count .txt-slogans {
   font-size: 0;
 }
-/* line 210, ../../src/styles/main.scss */
+/* line 222, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container .order-count .txt-slogans .item {
   font-family: Arial,sans-serif;
   display: inline-block;
   width: 116px;
   color: #fff;
 }
-/* line 218, ../../src/styles/main.scss */
+/* line 230, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container .order-count .txt-slogans .item .zh {
   font-size: 30px;
   font-weight: 100;
   line-height: 40px;
   height: 40px;
 }
-/* line 226, ../../src/styles/main.scss */
+/* line 238, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container .order-count .txt-slogans .item .en {
   font-size: 15px;
   font-weight: 200;
@@ -225,27 +227,27 @@ body.show-right .main .rightside-toggle-wrapper {
   height: 20px;
   letter-spacing: .6px;
 }
-/* line 236, ../../src/styles/main.scss */
+/* line 247, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container .order-count .txt-slogans .item:before {
-  content: ' ';
   float: right;
   width: 0;
-  border-left: 1px solid #fff;
   height: 32px;
   margin-top: 16px;
+  content: ' ';
+  border-left: 1px solid #fff;
 }
-/* line 244, ../../src/styles/main.scss */
+/* line 258, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container .order-count .txt-slogans .item:last-child:before {
   content: none;
 }
-/* line 251, ../../src/styles/main.scss */
+/* line 265, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container .order-status .txt-wrapper {
   position: absolute;
   right: 30px;
   bottom: 40px;
   text-align: right;
 }
-/* line 260, ../../src/styles/main.scss */
+/* line 274, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container .order-seal a {
   font-size: 12px;
   display: block;
@@ -253,7 +255,7 @@ body.show-right .main .rightside-toggle-wrapper {
   text-decoration: none;
   color: #4b91ff;
 }
-/* line 273, ../../src/styles/main.scss */
+/* line 287, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container .order-sign a {
   font-size: 12px;
   display: block;
@@ -261,13 +263,13 @@ body.show-right .main .rightside-toggle-wrapper {
   text-decoration: none;
   color: #4b91ff;
 }
-/* line 284, ../../src/styles/main.scss */
+/* line 298, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container .order-sign .grid {
   font-size: 0;
   margin-top: 80px;
   padding: 0 30px;
 }
-/* line 289, ../../src/styles/main.scss */
+/* line 303, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container .order-sign .grid .cell {
   font-size: 20px;
   display: inline-block;
@@ -275,42 +277,42 @@ body.show-right .main .rightside-toggle-wrapper {
   text-align: center;
   color: #fff;
 }
-/* line 299, ../../src/styles/main.scss */
+/* line 313, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container .order-sign .grid .cell img {
   margin-bottom: 40px;
 }
-/* line 302, ../../src/styles/main.scss */
+/* line 316, ../../src/styles/main.scss */
 .content .content-wrapper .slide-container .order-sign .grid .cell p {
   line-height: 40px;
   height: 40px;
   margin: 0;
 }
-/* line 312, ../../src/styles/main.scss */
+/* line 326, ../../src/styles/main.scss */
 .content .content-wrapper .slide-indicators {
   font-size: 0;
   position: relative;
   z-index: 4;
 }
-/* line 317, ../../src/styles/main.scss */
+/* line 331, ../../src/styles/main.scss */
 .content .content-wrapper .slide-indicators .item {
-  padding: 8px 0;
   display: inline-block;
-  margin: 0 2.5px;
   width: 160px;
+  margin: 0 2.5px;
+  padding: 8px 0;
   cursor: pointer;
 }
-/* line 319, ../../src/styles/main.scss */
+/* line 339, ../../src/styles/main.scss */
 .content .content-wrapper .slide-indicators .item .inner {
   height: 4px;
   border: 1px solid  #fff;
   background-color: #fff;
 }
-/* line 331, ../../src/styles/main.scss */
+/* line 346, ../../src/styles/main.scss */
 .content .content-wrapper .slide-indicators .active .inner {
   background-color: transparent;
 }
 
-/* line 338, ../../src/styles/main.scss */
+/* line 353, ../../src/styles/main.scss */
 .leftside-toggle {
   font-size: 13px;
   position: absolute;
@@ -320,22 +322,22 @@ body.show-right .main .rightside-toggle-wrapper {
   cursor: pointer;
   color: #fff;
 }
-/* line 349, ../../src/styles/main.scss */
+/* line 364, ../../src/styles/main.scss */
 .leftside-toggle .close {
   display: none;
 }
-/* line 352, ../../src/styles/main.scss */
+/* line 367, ../../src/styles/main.scss */
 .leftside-toggle span i {
   margin-right: 6px;
   vertical-align: top;
 }
-/* line 356, ../../src/styles/main.scss */
+/* line 372, ../../src/styles/main.scss */
 .leftside-toggle .more-icon {
   margin-right: 6px;
   vertical-align: top;
 }
 
-/* line 361, ../../src/styles/main.scss */
+/* line 378, ../../src/styles/main.scss */
 .leftside {
   font-size: 14px;
   position: fixed;
@@ -348,7 +350,7 @@ body.show-right .main .rightside-toggle-wrapper {
   background-color: #242b33;
   box-shadow: inset -14px 0 14px -14px black;
 }
-/* line 374, ../../src/styles/main.scss */
+/* line 392, ../../src/styles/main.scss */
 .leftside .btn-signup {
   font-size: 15px;
   line-height: 36px;
@@ -363,71 +365,71 @@ body.show-right .main .rightside-toggle-wrapper {
   border-radius: 5px;
   background-color: #fa9600;
 }
-/* line 390, ../../src/styles/main.scss */
+/* line 408, ../../src/styles/main.scss */
 .leftside .btn-signup:focus {
   outline: none;
   box-shadow: none;
 }
-/* line 396, ../../src/styles/main.scss */
+/* line 414, ../../src/styles/main.scss */
 .leftside .help-block .pull-right {
   cursor: pointer;
   text-decoration: none;
   color: #4b91ff;
 }
-/* line 403, ../../src/styles/main.scss */
+/* line 421, ../../src/styles/main.scss */
 .leftside .nav {
   margin-top: 75px;
 }
 @media screen and (max-height: 720px) {
-  /* line 403, ../../src/styles/main.scss */
+  /* line 421, ../../src/styles/main.scss */
   .leftside .nav {
     margin-top: 42px;
   }
 }
 @media screen and (max-height: 580px) {
-  /* line 403, ../../src/styles/main.scss */
+  /* line 421, ../../src/styles/main.scss */
   .leftside .nav {
     margin-top: 20px;
   }
 }
-/* line 411, ../../src/styles/main.scss */
+/* line 429, ../../src/styles/main.scss */
 .leftside .nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/* line 416, ../../src/styles/main.scss */
+/* line 434, ../../src/styles/main.scss */
 .leftside .nav ul li {
   position: relative;
 }
-/* line 420, ../../src/styles/main.scss */
+/* line 438, ../../src/styles/main.scss */
 .leftside .nav li a {
   font-size: 12px;
   line-height: 40px;
   text-decoration: none;
   color: #fff;
 }
-/* line 427, ../../src/styles/main.scss */
+/* line 445, ../../src/styles/main.scss */
 .leftside .nav li a i.pull-right {
   margin-top: 14px;
 }
-/* line 430, ../../src/styles/main.scss */
+/* line 448, ../../src/styles/main.scss */
 .leftside .nav li a:hover {
-  color: #F59300;
+  color: #f59300;
 }
 @media screen and (max-height: 720px) {
-  /* line 420, ../../src/styles/main.scss */
+  /* line 438, ../../src/styles/main.scss */
   .leftside .nav li a {
     line-height: 38px;
   }
 }
 @media screen and (max-height: 580px) {
-  /* line 420, ../../src/styles/main.scss */
+  /* line 438, ../../src/styles/main.scss */
   .leftside .nav li a {
     line-height: 28px;
   }
 }
-/* line 437, ../../src/styles/main.scss */
+/* line 459, ../../src/styles/main.scss */
 .leftside .footer {
   font-size: 12px;
   position: absolute;
@@ -435,17 +437,17 @@ body.show-right .main .rightside-toggle-wrapper {
   width: 220px;
   color: #fff;
 }
-/* line 446, ../../src/styles/main.scss */
+/* line 468, ../../src/styles/main.scss */
 .leftside .footer .tb {
   color: #fa9600;
 }
-/* line 450, ../../src/styles/main.scss */
+/* line 472, ../../src/styles/main.scss */
 .leftside .help-block {
   font-size: 12px;
   color: #fff;
 }
 
-/* line 458, ../../src/styles/main.scss */
+/* line 480, ../../src/styles/main.scss */
 .rightside-toggle-wrapper {
   font-size: 13px;
   position: absolute;
@@ -453,51 +455,51 @@ body.show-right .main .rightside-toggle-wrapper {
   top: 15px;
   right: 20px;
   width: 300px;
+  text-align: right;
+  color: #fff;
   -webkit-transition: all 0.25s;
   -moz-transition: all 0.25s;
   -o-transition: all 0.25s;
   transition: all 0.25s;
-  text-align: right;
-  color: #fff;
 }
-/* line 472, ../../src/styles/main.scss */
+/* line 495, ../../src/styles/main.scss */
 .rightside-toggle-wrapper > span {
   display: inline-block;
   padding: 5px 13px;
   cursor: pointer;
 }
-/* line 479, ../../src/styles/main.scss */
+/* line 502, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .toggle-signin {
   margin-left: 20px;
 }
-/* line 482, ../../src/styles/main.scss */
+/* line 505, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .toggle-signup {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.4);
 }
-/* line 489, ../../src/styles/main.scss */
+/* line 512, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .driver-client-hover i {
   margin-right: 6px;
 }
-/* line 493, ../../src/styles/main.scss */
+/* line 516, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown-wrapper {
-  display: none;
   position: absolute;
   z-index: 34;
   top: 27px;
   right: 0;
+  display: none;
   width: 360px;
   height: 170px;
   padding-top: 5px;
   cursor: initial;
 }
-/* line 505, ../../src/styles/main.scss */
+/* line 530, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown {
   display: block;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
 }
-/* line 511, ../../src/styles/main.scss */
+/* line 536, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown:before {
   position: absolute;
   top: -11px;
@@ -508,7 +510,7 @@ body.show-right .main .rightside-toggle-wrapper {
   border-top-width: 8px;
   border-bottom: 8px solid rgba(0, 0, 0, 0.4);
 }
-/* line 524, ../../src/styles/main.scss */
+/* line 549, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown .split {
   position: absolute;
   top: 20px;
@@ -517,19 +519,19 @@ body.show-right .main .rightside-toggle-wrapper {
   height: 138px;
   border-left: 1px solid #fff;
 }
-/* line 535, ../../src/styles/main.scss */
+/* line 560, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown .pull-left,
 .rightside-toggle-wrapper .dropdown .pull-right {
   width: 50%;
   padding-top: 18px;
 }
-/* line 538, ../../src/styles/main.scss */
+/* line 563, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown .pull-left p,
 .rightside-toggle-wrapper .dropdown .pull-right p {
   font-size: 14px;
   margin: 0 0 12px 0;
 }
-/* line 545, ../../src/styles/main.scss */
+/* line 570, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown .pull-right .download-holder {
   display: inline-block;
   width: 140px;
@@ -538,37 +540,37 @@ body.show-right .main .rightside-toggle-wrapper {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.5);
 }
-/* line 556, ../../src/styles/main.scss */
+/* line 581, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown .download-holder {
   cursor: pointer;
 }
-/* line 558, ../../src/styles/main.scss */
+/* line 583, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown .download-holder i {
+  font-size: 28px;
   line-height: 43px;
   float: left;
-  font-size: 28px;
   height: 45px;
   padding-left: 4px;
 }
-/* line 567, ../../src/styles/main.scss */
+/* line 592, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown .download-holder .text {
   font-size: 12px;
-  padding-right: 4px;
   padding-top: 4px;
+  padding-right: 4px;
   padding-bottom: 4px;
   padding-left: 40px;
 }
-/* line 574, ../../src/styles/main.scss */
+/* line 599, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown .download-holder .text p {
   font-size: 14px;
   margin-bottom: 2px;
 }
-/* line 578, ../../src/styles/main.scss */
+/* line 604, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown .download-holder .text span {
   font-size: 12px;
 }
 
-/* line 586, ../../src/styles/main.scss */
+/* line 612, ../../src/styles/main.scss */
 .rightside {
   font-size: 14px;
   position: fixed;
@@ -578,13 +580,13 @@ body.show-right .main .rightside-toggle-wrapper {
   width: 300px;
   height: 100%;
   padding: 0 30px;
+  background-color: rgba(0, 0, 0, 0.4);
   -webkit-transition: all 0.25s;
   -moz-transition: all 0.25s;
   -o-transition: all 0.25s;
   transition: all 0.25s;
-  background-color: rgba(0, 0, 0, 0.4);
 }
-/* line 600, ../../src/styles/main.scss */
+/* line 627, ../../src/styles/main.scss */
 .rightside .close {
   font-size: 12px;
   position: absolute;
@@ -594,11 +596,11 @@ body.show-right .main .rightside-toggle-wrapper {
   cursor: pointer;
   color: #fff;
 }
-/* line 612, ../../src/styles/main.scss */
+/* line 639, ../../src/styles/main.scss */
 .rightside form {
   margin-top: 120px;
 }
-/* line 614, ../../src/styles/main.scss */
+/* line 641, ../../src/styles/main.scss */
 .rightside form .form-switcher {
   font-size: 0;
   margin-bottom: 80px;
@@ -606,7 +608,7 @@ body.show-right .main .rightside-toggle-wrapper {
   border: 1px solid  #fff;
   border-radius: 5px;
 }
-/* line 622, ../../src/styles/main.scss */
+/* line 649, ../../src/styles/main.scss */
 .rightside form .form-switcher span {
   font-size: 15px;
   line-height: 38px;
@@ -616,7 +618,7 @@ body.show-right .main .rightside-toggle-wrapper {
   cursor: pointer;
   text-align: center;
 }
-/* line 635, ../../src/styles/main.scss */
+/* line 662, ../../src/styles/main.scss */
 .rightside form .error {
   font-size: 12px;
   line-height: 20px;
@@ -626,7 +628,7 @@ body.show-right .main .rightside-toggle-wrapper {
   letter-spacing: 1.4px;
   color: #f00;
 }
-/* line 648, ../../src/styles/main.scss */
+/* line 675, ../../src/styles/main.scss */
 .rightside form input[type='text'],
 .rightside form input[type='password'] {
   display: block;
@@ -640,19 +642,19 @@ body.show-right .main .rightside-toggle-wrapper {
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.3);
 }
-/* line 662, ../../src/styles/main.scss */
+/* line 689, ../../src/styles/main.scss */
 .rightside form .service-term {
   font-size: 12px;
   margin-bottom: 20px;
   text-align: center;
   color: #fff;
 }
-/* line 670, ../../src/styles/main.scss */
+/* line 697, ../../src/styles/main.scss */
 .rightside form .service-term a {
   text-decoration: none;
   color: #4b91ff;
 }
-/* line 676, ../../src/styles/main.scss */
+/* line 703, ../../src/styles/main.scss */
 .rightside form .assist {
   font-size: 12px;
   line-height: 20px;
@@ -661,16 +663,16 @@ body.show-right .main .rightside-toggle-wrapper {
   margin-bottom: 20px;
   color: #fff;
 }
-/* line 686, ../../src/styles/main.scss */
+/* line 713, ../../src/styles/main.scss */
 .rightside form .assist label {
   margin-left: 8px;
 }
-/* line 689, ../../src/styles/main.scss */
+/* line 716, ../../src/styles/main.scss */
 .rightside form .assist a {
   text-decoration: none;
   color: #fff;
 }
-/* line 696, ../../src/styles/main.scss */
+/* line 723, ../../src/styles/main.scss */
 .rightside form .action button {
   font-size: 18px;
   line-height: 40px;
@@ -683,152 +685,152 @@ body.show-right .main .rightside-toggle-wrapper {
   border-radius: 5px;
   background-color: #4b91ff;
 }
-/* line 710, ../../src/styles/main.scss */
+/* line 737, ../../src/styles/main.scss */
 .rightside form .action button:active {
   outline: none;
   box-shadow: none;
 }
-/* line 715, ../../src/styles/main.scss */
+/* line 742, ../../src/styles/main.scss */
 .rightside form .action .sb-loading {
   display: none;
   background-color: #2679fd;
 }
-/* line 726, ../../src/styles/main.scss */
+/* line 753, ../../src/styles/main.scss */
 .rightside [data-form-target='signin'] .service-term,
 .rightside [data-form-target='signin'] .company,
 .rightside [data-form-target='signin'] .sb-signup {
   display: none;
 }
-/* line 729, ../../src/styles/main.scss */
+/* line 756, ../../src/styles/main.scss */
 .rightside [data-form-target='signin'] .signin-target {
   color: #000;
   background-color: #fff;
 }
-/* line 736, ../../src/styles/main.scss */
+/* line 763, ../../src/styles/main.scss */
 .rightside [data-form-target='signup'] .assist,
 .rightside [data-form-target='signup'] .sb-signin {
   display: none;
 }
-/* line 739, ../../src/styles/main.scss */
+/* line 766, ../../src/styles/main.scss */
 .rightside [data-form-target='signup'] .signup-target {
   color: #000;
   background-color: #fff;
 }
-/* line 745, ../../src/styles/main.scss */
+/* line 772, ../../src/styles/main.scss */
 .rightside .submiting .action .sb-loading {
   display: block;
 }
-/* line 749, ../../src/styles/main.scss */
+/* line 776, ../../src/styles/main.scss */
 .rightside .submiting .action .sb-signin,
 .rightside .submiting .action .sb-signup {
   display: none;
 }
 
-/* line 755, ../../src/styles/main.scss */
+/* line 782, ../../src/styles/main.scss */
 .driver-client-icon {
-  margin-right: 8px;
   position: relative;
   top: 2px;
+  margin-right: 8px;
 }
 
-/* line 756, ../../src/styles/main.scss */
+/* line 788, ../../src/styles/main.scss */
 .right-close-icon {
-  vertical-align: middle;
   margin-right: 6px;
+  vertical-align: middle;
 }
 
-/* line 757, ../../src/styles/main.scss */
+/* line 793, ../../src/styles/main.scss */
 .weibo-icon {
-  margin-top: 7px;
   position: absolute;
-  right: 0;
   top: 50%;
+  right: 0;
+  margin-top: 7px;
   margin-top: -9px;
 }
 
-/* line 764, ../../src/styles/main.scss */
+/* line 801, ../../src/styles/main.scss */
 .email-icon {
   margin-top: 7px;
 }
 
-/* line 767, ../../src/styles/main.scss */
+/* line 806, ../../src/styles/main.scss */
 .bg {
   display: inline-block;
-  vertical-align: middle;
   width: 22px;
   height: 18px;
+  vertical-align: middle;
   background-image: url("../images/bgs.png");
 }
 
-/* line 774, ../../src/styles/main.scss */
+/* line 816, ../../src/styles/main.scss */
 .bg-expand {
-  background-position: 0px -50px;
+  background-position: 0 -50px;
 }
 
-/* line 777, ../../src/styles/main.scss */
+/* line 819, ../../src/styles/main.scss */
 .bg-email {
-  background-position: 0px -22px;
+  background-position: 0 -22px;
 }
 
-/* line 780, ../../src/styles/main.scss */
+/* line 822, ../../src/styles/main.scss */
 .bg-download {
-  background-position: 0px 0px;
+  background-position: 0 0;
 }
 
-/* line 784, ../../src/styles/main.scss */
+/* line 826, ../../src/styles/main.scss */
 .bg-collapse {
-  background-position: 0px 0px;
+  background-position: 0 0;
 }
 
-/* line 789, ../../src/styles/main.scss */
+/* line 831, ../../src/styles/main.scss */
 .pull-right {
   float: right;
 }
 
-/* line 792, ../../src/styles/main.scss */
+/* line 834, ../../src/styles/main.scss */
 .pull-left {
   float: left;
 }
 
-/* line 795, ../../src/styles/main.scss */
+/* line 837, ../../src/styles/main.scss */
 .tac {
   text-align: center;
 }
 
-/* line 804, ../../src/styles/main.scss */
+/* line 846, ../../src/styles/main.scss */
 input {
   outline: none;
   box-shadow: none;
 }
-/* line 807, ../../src/styles/main.scss */
+/* line 849, ../../src/styles/main.scss */
 input:focus {
   outline: none;
   box-shadow: none;
 }
 
-/* line 813, ../../src/styles/main.scss */
+/* line 855, ../../src/styles/main.scss */
 ::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* line 817, ../../src/styles/main.scss */
+/* line 859, ../../src/styles/main.scss */
 :-moz-placeholder {
   /* Firefox 18- */
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* line 822, ../../src/styles/main.scss */
+/* line 864, ../../src/styles/main.scss */
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* line 827, ../../src/styles/main.scss */
+/* line 869, ../../src/styles/main.scss */
 :-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* line 831, ../../src/styles/main.scss */
+/* line 873, ../../src/styles/main.scss */
 embed {
   font-size: 0;
   display: none;
