@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var $body, $counters, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, appeared, emailRegex, img, isHover, orderCounter, switchItem, willHide;
+    var $body, $counters, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, appeared, emailRegex, errorField, img, isHover, orderCounter, showLeft, switchItem, willHide;
     orderCounter = 361840;
     $body = $('body');
     $loginform = $('#loginform');
@@ -9,6 +9,7 @@
     $slideItemActive = $('.slide-container > .item.active');
     $slideIndicators = $('.slide-indicators > .item');
     $slideIndicatorActive = $('.slide-indicators > .item.active');
+    errorField = void 0;
     emailRegex = /^[a-z0-9]([a-z0-9]*[-_\.\+]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2,4})?$/;
     $counters = $('.counters');
     setInterval(function() {
@@ -21,9 +22,13 @@
       }
       return $counters.html(innerHtml);
     }, 1500);
+    showLeft = false;
     $('.leftside-toggle').click(function() {
       $body.toggleClass('show-left');
       return $body.removeClass('show-right');
+    });
+    $('.content').click(function() {
+      return $body.removeClass('show-left');
     });
     willHide = true;
     appeared = false;
@@ -103,20 +108,6 @@
     $('#order-count, #order-status, #order-seal, #order-sign').click(function() {
       return switchItem($(this));
     });
-    setInterval(function() {
-      var max, _n;
-      if (isHover) {
-        return;
-      }
-      _n = $slideIndicatorActive.index();
-      max = $slideIndicators.length;
-      if (_n === max - 1) {
-        _n = 0;
-      } else {
-        _n += 1;
-      }
-      return $($slideIndicators[_n]).click();
-    }, 5000);
     $('#loginform .action button').click(function() {
       var $error, $form, $t, company, email, params, password, target;
       $t = $(this);
@@ -127,18 +118,22 @@
       company = $($form[0].company).val();
       $error = $('.error');
       if (email.length === 0) {
+        errorField = 'email';
         $error.text('请输入您的邮箱');
         return;
       }
       if (!emailRegex.test(email)) {
+        errorField = 'email';
         $error.text('邮箱格式不正确');
         return;
       }
       if (password.length < 6) {
+        errorField = 'password';
         $error.text('密码最少6位');
         return;
       }
       if (target === 'signup') {
+        errorField = 'company';
         if (company.length === 0) {
           $error.text('请输入您的公司名称');
           return;
@@ -165,7 +160,14 @@
       img.onerror = function() {
         return $body.append($('#left-side-template').html());
       };
-      return img.src = 'images/bg.jpg';
+      img.src = 'images/bg.jpg';
+      return $('input').focus(function() {
+        var $t;
+        $t = $(this);
+        if (($t.attr('name')) === errorField) {
+          return $('.error').empty();
+        }
+      });
     }
   });
 
