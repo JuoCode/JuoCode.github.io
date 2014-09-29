@@ -683,6 +683,8 @@ body.show-right .main .rightside-toggle-wrapper {
 /* line 740, ../../src/styles/main.scss */
 .driver-client-icon {
   margin-right: 8px;
+  position: relative;
+  top: 1px;
 }
 
 /* line 741, ../../src/styles/main.scss */
