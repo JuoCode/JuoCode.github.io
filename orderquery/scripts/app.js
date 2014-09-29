@@ -11,6 +11,7 @@
     $slideIndicatorActive = $('.slide-indicators > .item.active');
     errorField = void 0;
     emailRegex = /^[a-z0-9]([a-z0-9]*[-_\.\+]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2,4})?$/;
+    $('input, textarea').placeholder();
     $counters = $('.counters');
     setInterval(function() {
       var i, innerHtml, units, _i, _len;
@@ -98,6 +99,20 @@
     $('#order-count, #order-status, #order-seal, #order-sign').click(function() {
       return switchItem($(this));
     });
+    setInterval(function() {
+      var max, _n;
+      if (isHover) {
+        return;
+      }
+      _n = $slideIndicatorActive.index();
+      max = $slideIndicators.length;
+      if (_n === max - 1) {
+        _n = 0;
+      } else {
+        _n += 1;
+      }
+      return switchItem($($slideIndicators[_n]));
+    }, 5000);
     $('#loginform .action button').click(function() {
       var $error, $form, $t, company, email, params, password, target;
       $t = $(this);
