@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var $body, $counters, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, appeared, captured, emailRegex, errorField, img, isHover, orderCounter, showLeft, switchItem, willHide;
+    var $body, $counters, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, appeared, captured, emailRegex, errorField, img, initLeftBtnEvent, isHover, orderCounter, showLeft, switchItem, willHide;
     orderCounter = 361840;
     $body = $('body');
     $loginform = $('#loginform');
@@ -69,16 +69,6 @@
       $loginform.attr('data-form-target', target);
       return $('.error').empty();
     });
-    $('.btn-signup').click(function() {
-      $body.removeClass('show-left');
-      $body.addClass('show-right');
-      return $loginform.attr('data-form-target', 'signup');
-    });
-    $('.btn-signin').click(function() {
-      $body.removeClass('show-left');
-      $body.addClass('show-right');
-      return $loginform.attr('data-form-target', 'signin');
-    });
     $('.rightside .close').click(function() {
       return $body.removeClass('show-right');
     });
@@ -108,20 +98,6 @@
     $('#order-count, #order-status, #order-seal, #order-sign').click(function() {
       return switchItem($(this));
     });
-    setInterval(function() {
-      var max, _n;
-      if (isHover) {
-        return;
-      }
-      _n = $slideIndicatorActive.index();
-      max = $slideIndicators.length;
-      if (_n === max - 1) {
-        _n = 0;
-      } else {
-        _n += 1;
-      }
-      return switchItem($($slideIndicators[_n]));
-    }, 5000);
     $('#loginform .action button').click(function() {
       var $error, $form, $t, company, email, params, password, target;
       $t = $(this);
@@ -166,13 +142,27 @@
         return alert('登录成功');
       }, 1000);
     });
+    initLeftBtnEvent = function() {
+      $('.btn-signup').click(function() {
+        $body.removeClass('show-left');
+        $body.addClass('show-right');
+        return $loginform.attr('data-form-target', 'signup');
+      });
+      return $('.btn-signin').click(function() {
+        $body.removeClass('show-left');
+        $body.addClass('show-right');
+        return $loginform.attr('data-form-target', 'signin');
+      });
+    };
     if (Image) {
       img = new Image();
       img.onload = function() {
-        return $body.append($('#left-side-template').html());
+        $body.append($('#left-side-template').html());
+        return initLeftBtnEvent();
       };
       img.onerror = function() {
-        return $body.append($('#left-side-template').html());
+        $body.append($('#left-side-template').html());
+        return initLeftBtnEvent();
       };
       img.src = 'images/bg.jpg';
       $('input').focus(function() {
