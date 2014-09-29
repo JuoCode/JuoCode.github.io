@@ -309,9 +309,15 @@ body.show-right .main .rightside-toggle-wrapper {
 /* line 348, ../../src/styles/main.scss */
 .leftside-toggle span i {
   margin-right: 6px;
+  vertical-align: top;
+}
+/* line 352, ../../src/styles/main.scss */
+.leftside-toggle .more-icon {
+  margin-right: 6px;
+  vertical-align: top;
 }
 
-/* line 352, ../../src/styles/main.scss */
+/* line 357, ../../src/styles/main.scss */
 .leftside {
   font-size: 14px;
   position: fixed;
@@ -324,7 +330,7 @@ body.show-right .main .rightside-toggle-wrapper {
   background-color: #242b33;
   box-shadow: inset -14px 0 14px -14px black;
 }
-/* line 365, ../../src/styles/main.scss */
+/* line 370, ../../src/styles/main.scss */
 .leftside .btn-signup {
   font-size: 15px;
   line-height: 36px;
@@ -339,49 +345,49 @@ body.show-right .main .rightside-toggle-wrapper {
   border-radius: 5px;
   background-color: #fa9600;
 }
-/* line 381, ../../src/styles/main.scss */
+/* line 386, ../../src/styles/main.scss */
 .leftside .btn-signup:focus {
   outline: none;
   box-shadow: none;
 }
-/* line 387, ../../src/styles/main.scss */
+/* line 392, ../../src/styles/main.scss */
 .leftside .help-block .pull-right {
   cursor: pointer;
   text-decoration: none;
   color: #4b91ff;
 }
-/* line 394, ../../src/styles/main.scss */
+/* line 399, ../../src/styles/main.scss */
 .leftside .nav {
   margin-top: 75px;
 }
-/* line 396, ../../src/styles/main.scss */
+/* line 401, ../../src/styles/main.scss */
 .leftside .nav ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
-/* line 402, ../../src/styles/main.scss */
+/* line 407, ../../src/styles/main.scss */
 .leftside .nav li a {
   font-size: 12px;
   line-height: 40px;
   text-decoration: none;
   color: #fff;
 }
-/* line 409, ../../src/styles/main.scss */
+/* line 414, ../../src/styles/main.scss */
 .leftside .nav li a i.pull-right {
   margin-top: 14px;
 }
-/* line 412, ../../src/styles/main.scss */
+/* line 417, ../../src/styles/main.scss */
 .leftside .nav li a:hover {
   color: #F59300;
 }
 @media screen and (max-height: 660px) {
-  /* line 402, ../../src/styles/main.scss */
+  /* line 407, ../../src/styles/main.scss */
   .leftside .nav li a {
-    line-height: 30px;
+    line-height: 32px;
   }
 }
-/* line 420, ../../src/styles/main.scss */
+/* line 425, ../../src/styles/main.scss */
 .leftside .footer {
   font-size: 12px;
   position: absolute;
@@ -389,13 +395,13 @@ body.show-right .main .rightside-toggle-wrapper {
   width: 220px;
   color: #fff;
 }
-/* line 430, ../../src/styles/main.scss */
+/* line 435, ../../src/styles/main.scss */
 .leftside .help-block {
   font-size: 12px;
   color: #fff;
 }
 
-/* line 438, ../../src/styles/main.scss */
+/* line 443, ../../src/styles/main.scss */
 .rightside-toggle-wrapper {
   font-size: 13px;
   position: absolute;
@@ -410,26 +416,26 @@ body.show-right .main .rightside-toggle-wrapper {
   text-align: right;
   color: #fff;
 }
-/* line 452, ../../src/styles/main.scss */
+/* line 457, ../../src/styles/main.scss */
 .rightside-toggle-wrapper > span {
   display: inline-block;
   padding: 5px 13px;
   cursor: pointer;
 }
-/* line 459, ../../src/styles/main.scss */
+/* line 464, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .toggle-signin {
   margin-left: 20px;
 }
-/* line 462, ../../src/styles/main.scss */
+/* line 467, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .toggle-signup {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.4);
 }
-/* line 469, ../../src/styles/main.scss */
+/* line 474, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .driver-client-hover i {
   margin-right: 6px;
 }
-/* line 473, ../../src/styles/main.scss */
+/* line 478, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown-wrapper {
   display: none;
   position: absolute;
@@ -441,13 +447,13 @@ body.show-right .main .rightside-toggle-wrapper {
   padding-top: 5px;
   cursor: initial;
 }
-/* line 485, ../../src/styles/main.scss */
+/* line 490, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown {
   display: block;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
 }
-/* line 491, ../../src/styles/main.scss */
+/* line 496, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown:before {
   position: absolute;
   top: -11px;
@@ -458,7 +464,7 @@ body.show-right .main .rightside-toggle-wrapper {
   border-top-width: 8px;
   border-bottom: 8px solid rgba(0, 0, 0, 0.4);
 }
-/* line 504, ../../src/styles/main.scss */
+/* line 509, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown .split {
   position: absolute;
   top: 20px;
@@ -467,19 +473,19 @@ body.show-right .main .rightside-toggle-wrapper {
   height: 138px;
   border-left: 1px solid #fff;
 }
-/* line 515, ../../src/styles/main.scss */
+/* line 520, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown .pull-left,
 .rightside-toggle-wrapper .dropdown .pull-right {
   width: 50%;
   padding-top: 18px;
 }
-/* line 518, ../../src/styles/main.scss */
+/* line 523, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown .pull-left p,
 .rightside-toggle-wrapper .dropdown .pull-right p {
   font-size: 14px;
   margin: 0 0 12px 0;
 }
-/* line 525, ../../src/styles/main.scss */
+/* line 530, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown .pull-right .download-holder {
   display: inline-block;
   width: 140px;
@@ -488,11 +494,11 @@ body.show-right .main .rightside-toggle-wrapper {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0.5);
 }
-/* line 536, ../../src/styles/main.scss */
+/* line 541, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown .download-holder {
   cursor: pointer;
 }
-/* line 538, ../../src/styles/main.scss */
+/* line 543, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown .download-holder i {
   line-height: 43px;
   float: left;
@@ -500,7 +506,7 @@ body.show-right .main .rightside-toggle-wrapper {
   height: 45px;
   padding-left: 4px;
 }
-/* line 547, ../../src/styles/main.scss */
+/* line 552, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown .download-holder .text {
   font-size: 12px;
   padding-right: 4px;
@@ -508,17 +514,17 @@ body.show-right .main .rightside-toggle-wrapper {
   padding-bottom: 4px;
   padding-left: 40px;
 }
-/* line 554, ../../src/styles/main.scss */
+/* line 559, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown .download-holder .text p {
   font-size: 14px;
   margin-bottom: 2px;
 }
-/* line 558, ../../src/styles/main.scss */
+/* line 563, ../../src/styles/main.scss */
 .rightside-toggle-wrapper .dropdown .download-holder .text span {
   font-size: 12px;
 }
 
-/* line 566, ../../src/styles/main.scss */
+/* line 571, ../../src/styles/main.scss */
 .rightside {
   font-size: 14px;
   position: fixed;
@@ -534,7 +540,7 @@ body.show-right .main .rightside-toggle-wrapper {
   transition: all 0.25s;
   background-color: rgba(0, 0, 0, 0.4);
 }
-/* line 580, ../../src/styles/main.scss */
+/* line 585, ../../src/styles/main.scss */
 .rightside .close {
   font-size: 12px;
   position: absolute;
@@ -544,11 +550,11 @@ body.show-right .main .rightside-toggle-wrapper {
   cursor: pointer;
   color: #fff;
 }
-/* line 592, ../../src/styles/main.scss */
+/* line 597, ../../src/styles/main.scss */
 .rightside form {
   margin-top: 120px;
 }
-/* line 594, ../../src/styles/main.scss */
+/* line 599, ../../src/styles/main.scss */
 .rightside form .form-switcher {
   font-size: 0;
   margin-bottom: 80px;
@@ -556,7 +562,7 @@ body.show-right .main .rightside-toggle-wrapper {
   border: 1px solid  #fff;
   border-radius: 5px;
 }
-/* line 602, ../../src/styles/main.scss */
+/* line 607, ../../src/styles/main.scss */
 .rightside form .form-switcher span {
   font-size: 15px;
   line-height: 38px;
@@ -566,7 +572,7 @@ body.show-right .main .rightside-toggle-wrapper {
   cursor: pointer;
   text-align: center;
 }
-/* line 615, ../../src/styles/main.scss */
+/* line 620, ../../src/styles/main.scss */
 .rightside form .error {
   font-size: 12px;
   line-height: 20px;
@@ -576,7 +582,7 @@ body.show-right .main .rightside-toggle-wrapper {
   letter-spacing: 1.4px;
   color: #f00;
 }
-/* line 628, ../../src/styles/main.scss */
+/* line 633, ../../src/styles/main.scss */
 .rightside form input[type='text'],
 .rightside form input[type='password'] {
   display: block;
@@ -590,19 +596,19 @@ body.show-right .main .rightside-toggle-wrapper {
   border-radius: 5px;
   background-color: rgba(255, 255, 255, 0.3);
 }
-/* line 642, ../../src/styles/main.scss */
+/* line 647, ../../src/styles/main.scss */
 .rightside form .service-term {
   font-size: 12px;
   margin-bottom: 20px;
   text-align: center;
   color: #fff;
 }
-/* line 650, ../../src/styles/main.scss */
+/* line 655, ../../src/styles/main.scss */
 .rightside form .service-term a {
   text-decoration: none;
   color: #4b91ff;
 }
-/* line 656, ../../src/styles/main.scss */
+/* line 661, ../../src/styles/main.scss */
 .rightside form .assist {
   font-size: 12px;
   line-height: 20px;
@@ -611,16 +617,16 @@ body.show-right .main .rightside-toggle-wrapper {
   margin-bottom: 20px;
   color: #fff;
 }
-/* line 666, ../../src/styles/main.scss */
+/* line 671, ../../src/styles/main.scss */
 .rightside form .assist label {
   margin-left: 8px;
 }
-/* line 669, ../../src/styles/main.scss */
+/* line 674, ../../src/styles/main.scss */
 .rightside form .assist a {
   text-decoration: none;
   color: #fff;
 }
-/* line 676, ../../src/styles/main.scss */
+/* line 681, ../../src/styles/main.scss */
 .rightside form .action button {
   font-size: 18px;
   line-height: 40px;
@@ -633,96 +639,140 @@ body.show-right .main .rightside-toggle-wrapper {
   border-radius: 5px;
   background-color: #4b91ff;
 }
-/* line 690, ../../src/styles/main.scss */
+/* line 695, ../../src/styles/main.scss */
 .rightside form .action button:active {
   outline: none;
   box-shadow: none;
 }
-/* line 695, ../../src/styles/main.scss */
+/* line 700, ../../src/styles/main.scss */
 .rightside form .action .sb-loading {
   display: none;
   background-color: #2679fd;
 }
-/* line 706, ../../src/styles/main.scss */
+/* line 711, ../../src/styles/main.scss */
 .rightside [data-form-target='signin'] .service-term,
 .rightside [data-form-target='signin'] .company,
 .rightside [data-form-target='signin'] .sb-signup {
   display: none;
 }
-/* line 709, ../../src/styles/main.scss */
+/* line 714, ../../src/styles/main.scss */
 .rightside [data-form-target='signin'] .signin-target {
   color: #000;
   background-color: #fff;
 }
-/* line 716, ../../src/styles/main.scss */
+/* line 721, ../../src/styles/main.scss */
 .rightside [data-form-target='signup'] .assist,
 .rightside [data-form-target='signup'] .sb-signin {
   display: none;
 }
-/* line 719, ../../src/styles/main.scss */
+/* line 724, ../../src/styles/main.scss */
 .rightside [data-form-target='signup'] .signup-target {
   color: #000;
   background-color: #fff;
 }
-/* line 725, ../../src/styles/main.scss */
+/* line 730, ../../src/styles/main.scss */
 .rightside .submiting .action .sb-loading {
   display: block;
 }
-/* line 729, ../../src/styles/main.scss */
+/* line 734, ../../src/styles/main.scss */
 .rightside .submiting .action .sb-signin,
 .rightside .submiting .action .sb-signup {
   display: none;
 }
 
-/* line 738, ../../src/styles/main.scss */
+/* line 740, ../../src/styles/main.scss */
+.driver-client-icon {
+  margin-right: 8px;
+}
+
+/* line 741, ../../src/styles/main.scss */
+.weibo-icon {
+  margin-top: 5px;
+}
+
+/* line 742, ../../src/styles/main.scss */
+.email-icon {
+  margin-top: 5px;
+}
+
+/* line 745, ../../src/styles/main.scss */
+.bg {
+  display: inline-block;
+  vertical-align: middle;
+  width: 22px;
+  height: 18px;
+  background-image: url("../images/bgs.png");
+}
+
+/* line 752, ../../src/styles/main.scss */
+.bg-expand {
+  background-position: 0px -50px;
+}
+
+/* line 755, ../../src/styles/main.scss */
+.bg-email {
+  background-position: 0px -22px;
+}
+
+/* line 758, ../../src/styles/main.scss */
+.bg-download {
+  background-position: 0px 0px;
+}
+
+/* line 762, ../../src/styles/main.scss */
+.bg-collapse {
+  background-position: 0px 0px;
+}
+
+/* line 767, ../../src/styles/main.scss */
 .pull-right {
   float: right;
 }
 
-/* line 741, ../../src/styles/main.scss */
+/* line 770, ../../src/styles/main.scss */
 .pull-left {
   float: left;
 }
 
-/* line 744, ../../src/styles/main.scss */
+/* line 773, ../../src/styles/main.scss */
 .tac {
   text-align: center;
 }
 
-/* line 753, ../../src/styles/main.scss */
+/* line 782, ../../src/styles/main.scss */
 input {
   outline: none;
   box-shadow: none;
 }
-/* line 756, ../../src/styles/main.scss */
+/* line 785, ../../src/styles/main.scss */
 input:focus {
   outline: none;
   box-shadow: none;
 }
 
-/* line 762, ../../src/styles/main.scss */
+/* line 791, ../../src/styles/main.scss */
 ::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* line 766, ../../src/styles/main.scss */
+/* line 795, ../../src/styles/main.scss */
 :-moz-placeholder {
   /* Firefox 18- */
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* line 771, ../../src/styles/main.scss */
+/* line 800, ../../src/styles/main.scss */
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* line 776, ../../src/styles/main.scss */
+/* line 805, ../../src/styles/main.scss */
 :-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* line 780, ../../src/styles/main.scss */
+/* line 809, ../../src/styles/main.scss */
 embed {
   font-size: 0;
   display: none;

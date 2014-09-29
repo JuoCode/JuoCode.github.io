@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var $body, $counters, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, appeared, emailRegex, errorField, img, isHover, orderCounter, showLeft, switchItem, willHide;
+    var $body, $counters, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, appeared, captured, emailRegex, errorField, img, isHover, orderCounter, showLeft, switchItem, willHide;
     orderCounter = 361840;
     $body = $('body');
     $loginform = $('#loginform');
@@ -108,6 +108,20 @@
     $('#order-count, #order-status, #order-seal, #order-sign').click(function() {
       return switchItem($(this));
     });
+    setInterval(function() {
+      var max, _n;
+      if (isHover) {
+        return;
+      }
+      _n = $slideIndicatorActive.index();
+      max = $slideIndicators.length;
+      if (_n === max - 1) {
+        _n = 0;
+      } else {
+        _n += 1;
+      }
+      return switchItem($($slideIndicators[_n]));
+    }, 5000);
     $('#loginform .action button').click(function() {
       var $error, $form, $t, company, email, params, password, target;
       $t = $(this);
@@ -161,11 +175,33 @@
         return $body.append($('#left-side-template').html());
       };
       img.src = 'images/bg.jpg';
-      return $('input').focus(function() {
+      $('input').focus(function() {
         var $t;
         $t = $(this);
         if (($t.attr('name')) === errorField) {
           return $('.error').empty();
+        }
+      });
+      captured = false;
+      return $('body').on('mousewheel', function(event) {
+        if (captured) {
+          return;
+        }
+        console.log(event.deltaY);
+        if (event.deltaY < -40) {
+          captured = true;
+          $body.addClass('show-left');
+          $body.removeClass('show-right');
+          return setTimeout(function() {
+            return captured = false;
+          }, 500);
+        } else if (event.deltaY > 60) {
+          captured = true;
+          $body.removeClass('show-left');
+          $body.removeClass('show-right');
+          return setTimeout(function() {
+            return captured = false;
+          }, 500);
         }
       });
     }
