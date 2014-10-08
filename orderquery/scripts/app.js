@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var $body, $counters, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, captured, emailRegex, errorField, img, initLeftBtnEvent, isHover, orderCounter, showLeft, switchItem;
+    var $body, $counters, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, captured, emailRegex, errorField, img, incrementCount, initLeftBtnEvent, isHover, orderCounter, phoneRegex, showLeft, switchItem;
     orderCounter = 361840;
     $body = $('body');
     $loginform = $('#loginform');
@@ -11,18 +11,22 @@
     $slideIndicatorActive = $('.slide-indicators > .item.active');
     errorField = void 0;
     emailRegex = /^[a-z0-9]([a-z0-9]*[-_\.\+]?[a-z0-9]+)*@([a-z0-9]*[-_]?[a-z0-9]+)+[\.][a-z]{2,3}([\.][a-z]{2,4})?$/;
+    phoneRegex = /^1[3|4|5|8][0-9]\d{4,8}$/;
     $('input, textarea').placeholder();
     $counters = $('.counters');
-    setInterval(function() {
+    incrementCount = function(count) {
       var i, innerHtml, units, _i, _len;
-      orderCounter += Math.floor(Math.random() * 10);
-      units = orderCounter.toString().split('');
+      units = count.toString().split('');
+      innerHtml = '';
       for (_i = 0, _len = units.length; _i < _len; _i++) {
         i = units[_i];
-        innerHtml = innerHtml += "<span>" + i + "</span>";
+        innerHtml += "<span>" + i + "</span>";
       }
       return $counters.html(innerHtml);
-    }, 5000);
+    };
+    $.get('public/rest/snapshot', function(data) {
+      return incrementCount(data.total);
+    });
     showLeft = false;
     $('.leftside-toggle').click(function() {
       $body.toggleClass('show-left');
@@ -89,22 +93,23 @@
       return switchItem($($slideIndicators[_n]));
     }, 5000);
     $('#loginform .action button').click(function() {
-      var $error, $form, $t, company, email, params, password, target;
+      var $error, $form, $t, params, password, password2, remoteError, target, targetUrl, username, verifyCode;
       $t = $(this);
       $form = $('#loginform');
       target = $form.attr('data-form-target');
-      email = $($form[0].email).val();
-      password = $($form[0].password).val();
-      company = $($form[0].company).val();
+      username = $($form[0].username).val().trim();
+      password = $($form[0].password).val().trim();
+      password2 = $($form[0].password2).val().trim();
+      verifyCode = $($form[0].verifyCode).val().trim();
       $error = $('.error');
-      if (email.length === 0) {
-        errorField = 'email';
-        $error.text('请输入您的邮箱');
+      if (username.length === 0) {
+        errorField = 'username';
+        $error.text('请输入正确的用户名 ( 邮箱或手机号码 )');
         return;
       }
-      if (!emailRegex.test(email)) {
-        errorField = 'email';
-        $error.text('邮箱格式不正确');
+      if (!((emailRegex.test(username)) || (phoneRegex.test(username)))) {
+        errorField = 'username';
+        $error.text('请输入正确的用户名 ( 邮箱或手机号码 )');
         return;
       }
       if (password.length < 6) {
@@ -113,24 +118,55 @@
         return;
       }
       if (target === 'signup') {
-        errorField = 'company';
-        if (company.length === 0) {
-          $error.text('请输入您的公司名称');
+        if (password2.length === 0) {
+          errorField = 'password2';
+          $error.text('请再次输入密码');
+          return;
+        } else if (password2 !== password) {
+          errorField = 'password2';
+          $error.text('两次输入的密码不一致，请重新输入');
+          return;
+        }
+        if (verifyCode.length === 0) {
+          errorField = 'verifyCode';
+          $error.text('请输入验证码');
           return;
         }
       }
       params = {
-        email: email,
+        username: username,
         password: password
       };
+      targetUrl = 'public/rest/login';
       if (target === 'signup') {
-        params.company = company;
+        targetUrl = 'public/rest/register';
+        params.password2 = password2;
+        params.verifyCode = verifyCode;
       }
       $form.addClass('submiting');
-      return setTimeout(function() {
-        $form.removeClass('submiting');
-        return alert('登录成功');
-      }, 1000);
+      remoteError = {
+        signin: {
+          '1': '用户名或密码错误'
+        },
+        signup: {
+          '1': '用户名被占用',
+          '2': '验证码错误'
+        }
+      };
+      return $.ajax({
+        url: targetUrl,
+        data: params,
+        success: function(data) {
+          if (data.errcode) {
+            return $error.text = remoteError[target][data.errcode];
+          } else {
+            return window.location.href = data.url;
+          }
+        },
+        error: function(resp) {
+          return $error.text('服务器异常，请联系管理员');
+        }
+      });
     });
     initLeftBtnEvent = function() {
       $('.btn-signup').click(function() {
@@ -155,36 +191,36 @@
         return initLeftBtnEvent();
       };
       img.src = 'images/bg.jpg';
-      $('input').focus(function() {
-        var $t;
-        $t = $(this);
-        if (($t.attr('name')) === errorField) {
-          return $('.error').empty();
-        }
-      });
-      captured = false;
-      return $('body').on('mousewheel', function(event) {
-        if (captured) {
-          return;
-        }
-        console.log(event.deltaY);
-        if (event.deltaY < -40) {
-          captured = true;
-          $body.addClass('show-left');
-          $body.removeClass('show-right');
-          return setTimeout(function() {
-            return captured = false;
-          }, 500);
-        } else if (event.deltaY > 60) {
-          captured = true;
-          $body.removeClass('show-left');
-          $body.removeClass('show-right');
-          return setTimeout(function() {
-            return captured = false;
-          }, 500);
-        }
-      });
     }
+    $('input').focus(function() {
+      var $t;
+      $t = $(this);
+      if (($t.attr('name')) === errorField) {
+        return $('.error').empty();
+      }
+    });
+    captured = false;
+    return $('body').on('mousewheel', function(event) {
+      if (captured) {
+        return;
+      }
+      console.log(event.deltaY);
+      if (event.deltaY < -40) {
+        captured = true;
+        $body.addClass('show-left');
+        $body.removeClass('show-right');
+        return setTimeout(function() {
+          return captured = false;
+        }, 500);
+      } else if (event.deltaY > 60) {
+        captured = true;
+        $body.removeClass('show-left');
+        $body.removeClass('show-right');
+        return setTimeout(function() {
+          return captured = false;
+        }, 500);
+      }
+    });
   });
 
 }).call(this);

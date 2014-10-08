@@ -705,51 +705,52 @@ body.show-right .main .rightside-toggle-wrapper {
   display: none;
   background-color: #2679fd;
 }
-/* line 762, ../../src/styles/main.scss */
+/* line 763, ../../src/styles/main.scss */
 .rightside [data-form-target='signin'] .service-term,
-.rightside [data-form-target='signin'] .company,
+.rightside [data-form-target='signin'] .password2,
+.rightside [data-form-target='signin'] .verify-code,
 .rightside [data-form-target='signin'] .sb-signup {
   display: none;
 }
-/* line 765, ../../src/styles/main.scss */
+/* line 766, ../../src/styles/main.scss */
 .rightside [data-form-target='signin'] .signin-target {
   color: #000;
   background-color: #fff;
 }
-/* line 772, ../../src/styles/main.scss */
+/* line 773, ../../src/styles/main.scss */
 .rightside [data-form-target='signup'] .assist,
 .rightside [data-form-target='signup'] .sb-signin {
   display: none;
 }
-/* line 775, ../../src/styles/main.scss */
+/* line 776, ../../src/styles/main.scss */
 .rightside [data-form-target='signup'] .signup-target {
   color: #000;
   background-color: #fff;
 }
-/* line 781, ../../src/styles/main.scss */
+/* line 782, ../../src/styles/main.scss */
 .rightside .submiting .action .sb-loading {
   display: block;
 }
-/* line 785, ../../src/styles/main.scss */
+/* line 786, ../../src/styles/main.scss */
 .rightside .submiting .action .sb-signin,
 .rightside .submiting .action .sb-signup {
   display: none;
 }
 
-/* line 791, ../../src/styles/main.scss */
+/* line 792, ../../src/styles/main.scss */
 .driver-client-icon {
   position: relative;
   top: 2px;
   margin-right: 8px;
 }
 
-/* line 797, ../../src/styles/main.scss */
+/* line 798, ../../src/styles/main.scss */
 .right-close-icon {
   margin-right: 6px;
   vertical-align: middle;
 }
 
-/* line 802, ../../src/styles/main.scss */
+/* line 803, ../../src/styles/main.scss */
 .weibo-icon {
   position: absolute;
   top: 50%;
@@ -758,12 +759,12 @@ body.show-right .main .rightside-toggle-wrapper {
   margin-top: -9px;
 }
 
-/* line 810, ../../src/styles/main.scss */
+/* line 811, ../../src/styles/main.scss */
 .email-icon {
   margin-top: 7px;
 }
 
-/* line 815, ../../src/styles/main.scss */
+/* line 816, ../../src/styles/main.scss */
 .bg {
   display: inline-block;
   width: 22px;
@@ -772,80 +773,80 @@ body.show-right .main .rightside-toggle-wrapper {
   background-image: url("../images/bgs.png");
 }
 
-/* line 825, ../../src/styles/main.scss */
+/* line 826, ../../src/styles/main.scss */
 .bg-expand {
   background-position: 0 -50px;
 }
 
-/* line 828, ../../src/styles/main.scss */
+/* line 829, ../../src/styles/main.scss */
 .bg-email {
   background-position: 0 -22px;
 }
 
-/* line 831, ../../src/styles/main.scss */
+/* line 832, ../../src/styles/main.scss */
 .bg-download {
   background-position: 0 0;
 }
 
-/* line 835, ../../src/styles/main.scss */
+/* line 836, ../../src/styles/main.scss */
 .bg-collapse {
   background-position: 0 0;
 }
 
-/* line 840, ../../src/styles/main.scss */
+/* line 841, ../../src/styles/main.scss */
 .pull-right {
   float: right;
 }
 
-/* line 843, ../../src/styles/main.scss */
+/* line 844, ../../src/styles/main.scss */
 .pull-left {
   float: left;
 }
 
-/* line 846, ../../src/styles/main.scss */
+/* line 847, ../../src/styles/main.scss */
 .tac {
   text-align: center;
 }
 
-/* line 855, ../../src/styles/main.scss */
+/* line 856, ../../src/styles/main.scss */
 input {
   outline: none;
   box-shadow: none;
 }
-/* line 858, ../../src/styles/main.scss */
+/* line 859, ../../src/styles/main.scss */
 input:focus {
   outline: none;
   box-shadow: none;
 }
 
-/* line 864, ../../src/styles/main.scss */
+/* line 865, ../../src/styles/main.scss */
 ::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* line 868, ../../src/styles/main.scss */
+/* line 869, ../../src/styles/main.scss */
 :-moz-placeholder {
   /* Firefox 18- */
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* line 873, ../../src/styles/main.scss */
+/* line 874, ../../src/styles/main.scss */
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* line 878, ../../src/styles/main.scss */
+/* line 879, ../../src/styles/main.scss */
 :-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* line 882, ../../src/styles/main.scss */
+/* line 883, ../../src/styles/main.scss */
 .placeholder {
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* line 886, ../../src/styles/main.scss */
+/* line 887, ../../src/styles/main.scss */
 embed {
   font-size: 0;
   display: none;
@@ -853,60 +854,60 @@ embed {
 }
 
 @-moz-keyframes fadeOut {
-  /* line 894, ../../src/styles/main.scss */
+  /* line 895, ../../src/styles/main.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 895, ../../src/styles/main.scss */
+  /* line 896, ../../src/styles/main.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-webkit-keyframes fadeOut {
-  /* line 894, ../../src/styles/main.scss */
+  /* line 895, ../../src/styles/main.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 895, ../../src/styles/main.scss */
+  /* line 896, ../../src/styles/main.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-o-keyframes fadeOut {
-  /* line 894, ../../src/styles/main.scss */
+  /* line 895, ../../src/styles/main.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 895, ../../src/styles/main.scss */
+  /* line 896, ../../src/styles/main.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-ms-keyframes fadeOut {
-  /* line 894, ../../src/styles/main.scss */
+  /* line 895, ../../src/styles/main.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 895, ../../src/styles/main.scss */
+  /* line 896, ../../src/styles/main.scss */
   100% {
     opacity: 1;
   }
 }
 
 @keyframes fadeOut {
-  /* line 894, ../../src/styles/main.scss */
+  /* line 895, ../../src/styles/main.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 895, ../../src/styles/main.scss */
+  /* line 896, ../../src/styles/main.scss */
   100% {
     opacity: 1;
   }
