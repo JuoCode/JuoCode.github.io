@@ -1,9 +1,10 @@
 (function() {
   $(function() {
-    var $body, $counters, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, captured, emailRegex, errorField, formValidate, img, incrementCount, initLeftBtnEvent, isHover, orderCounter, phoneRegex, showLeft, switchItem;
+    var $body, $counters, $leftSide, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, captured, emailRegex, errorField, formValidate, img, incrementCount, initLeftBtnEvent, isHover, orderCounter, phoneRegex, showLeft, switchItem;
     orderCounter = 361840;
     $body = $('body');
     $loginform = $('#loginform');
+    $leftSide = null;
     $main = $('.main');
     $slideItems = $('.slide-container > .item');
     $slideItemActive = $('.slide-container > .item.active');
@@ -33,6 +34,7 @@
       return $body.removeClass('show-right');
     });
     $('.content').click(function() {
+      $leftSide.removeClass('show-feedback-container');
       return $body.removeClass('show-left');
     });
     $('.toggle-signin, .toggle-signup').click(function() {
@@ -43,6 +45,20 @@
       return $loginform.attr('data-form-target', target);
     });
     $('.form-switcher span').click(function() {
+      var $t, target;
+      $t = $(this);
+      target = $t.data('form-target');
+      $loginform.attr('data-form-target', target);
+      return $('.error').empty();
+    });
+    $('.foundpwd-target').click(function() {
+      var $t, target;
+      $t = $(this);
+      target = $t.data('form-target');
+      $loginform.attr('data-form-target', target);
+      return $('.error').empty();
+    });
+    $('.sb-cancel').click(function() {
       var $t, target;
       $t = $(this);
       target = $t.data('form-target');
@@ -93,7 +109,7 @@
       return switchItem($($slideIndicators[_n]));
     }, 5000);
     formValidate = function() {
-      var $error, $form, $t, params, password, remoteError, target, targetUrl, username, verifyCode;
+      var $error, $form, $submitRes, $t, params, password, remoteError, target, targetUrl, username, verifyCode;
       $t = $(this);
       $form = $('#loginform');
       target = $form.attr('data-form-target');
@@ -101,20 +117,23 @@
       password = $($form[0].password).val().trim();
       verifyCode = $($form[0].verifyCode).val().trim();
       $error = $('.error');
+      $submitRes = $('.submit-res');
       if (username.length === 0) {
         errorField = 'username';
-        $error.text('请输入正确的用户名');
+        $error.text('请输入正确的邮箱');
         return;
       }
       if (!emailRegex.test(username)) {
         errorField = 'username';
-        $error.text('请输入正确的用户名');
+        $error.text('请输入正确的邮箱');
         return;
       }
-      if (password.length < 6) {
-        errorField = 'password';
-        $error.text('密码最少6位');
-        return;
+      if (target !== 'foundpwd') {
+        if (password.length < 6) {
+          errorField = 'password';
+          $error.text('密码最少6位');
+          return;
+        }
       }
       if (target === 'signup') {
         if (verifyCode.length === 0) {
@@ -124,22 +143,30 @@
         }
       }
       params = {
-        username: username,
-        password: password
+        username: username
       };
+      if (target !== 'foundpwd') {
+        params.password = password;
+      }
       targetUrl = 'public/rest/login';
       if (target === 'signup') {
         targetUrl = 'public/rest/register';
         params.verifyCode = verifyCode;
       }
+      if (target === 'foundpwd') {
+        targetUrl = 'public/rest/foundpwd';
+      }
       $form.addClass('submiting');
       remoteError = {
         signin: {
-          '1': '用户名或密码错误'
+          '1': '邮箱或密码错误'
         },
         signup: {
-          '1': '用户名被占用',
+          '1': '邮箱被占用',
           '2': '邀请码错误'
+        },
+        foundpwd: {
+          '1': '该邮箱未注册'
         }
       };
       return $.ajax({
@@ -149,6 +176,9 @@
           if (data.errcode) {
             return $error.text = remoteError[target][data.errcode];
           } else {
+            if (target === 'foundpwd') {
+              $submitRes.text('“找回密码”邮件已发送');
+            }
             return window.location.href = data.url;
           }
         },
@@ -157,22 +187,26 @@
         }
       });
     };
-    $('#loginform .action button').click(formValidate);
+    $('#loginform .action button:not(.sb-cancel)').click(formValidate);
     $('#loginform input').on('keypress', function(e) {
       if (e.charCode === 13) {
         return formValidate.call($(this));
       }
     });
     initLeftBtnEvent = function() {
+      $leftSide = $('.leftside');
       $('.btn-signup').click(function() {
         $body.removeClass('show-left');
         $body.addClass('show-right');
         return $loginform.attr('data-form-target', 'signup');
       });
-      return $('.btn-signin').click(function() {
+      $('.btn-signin').click(function() {
         $body.removeClass('show-left');
         $body.addClass('show-right');
         return $loginform.attr('data-form-target', 'signin');
+      });
+      return $('.feedback-toggle').click(function() {
+        return $leftSide.toggleClass('show-feedback-container');
       });
     };
     if (Image) {
