@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var $body, $counters, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, captured, emailRegex, errorField, img, incrementCount, initLeftBtnEvent, isHover, orderCounter, phoneRegex, showLeft, switchItem;
+    var $body, $counters, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, captured, emailRegex, errorField, formValidate, img, incrementCount, initLeftBtnEvent, isHover, orderCounter, phoneRegex, showLeft, switchItem;
     orderCounter = 361840;
     $body = $('body');
     $loginform = $('#loginform');
@@ -92,24 +92,23 @@
       }
       return switchItem($($slideIndicators[_n]));
     }, 5000);
-    $('#loginform .action button').click(function() {
-      var $error, $form, $t, params, password, password2, remoteError, target, targetUrl, username, verifyCode;
+    formValidate = function() {
+      var $error, $form, $t, params, password, remoteError, target, targetUrl, username, verifyCode;
       $t = $(this);
       $form = $('#loginform');
       target = $form.attr('data-form-target');
       username = $($form[0].username).val().trim();
       password = $($form[0].password).val().trim();
-      password2 = $($form[0].password2).val().trim();
       verifyCode = $($form[0].verifyCode).val().trim();
       $error = $('.error');
       if (username.length === 0) {
         errorField = 'username';
-        $error.text('请输入正确的用户名 ( 邮箱或手机号码 )');
+        $error.text('请输入正确的用户名');
         return;
       }
-      if (!((emailRegex.test(username)) || (phoneRegex.test(username)))) {
+      if (!emailRegex.test(username)) {
         errorField = 'username';
-        $error.text('请输入正确的用户名 ( 邮箱或手机号码 )');
+        $error.text('请输入正确的用户名');
         return;
       }
       if (password.length < 6) {
@@ -118,18 +117,9 @@
         return;
       }
       if (target === 'signup') {
-        if (password2.length === 0) {
-          errorField = 'password2';
-          $error.text('请再次输入密码');
-          return;
-        } else if (password2 !== password) {
-          errorField = 'password2';
-          $error.text('两次输入的密码不一致，请重新输入');
-          return;
-        }
         if (verifyCode.length === 0) {
           errorField = 'verifyCode';
-          $error.text('请输入验证码');
+          $error.text('请输入邀请码');
           return;
         }
       }
@@ -140,7 +130,6 @@
       targetUrl = 'public/rest/login';
       if (target === 'signup') {
         targetUrl = 'public/rest/register';
-        params.password2 = password2;
         params.verifyCode = verifyCode;
       }
       $form.addClass('submiting');
@@ -150,7 +139,7 @@
         },
         signup: {
           '1': '用户名被占用',
-          '2': '验证码错误'
+          '2': '邀请码错误'
         }
       };
       return $.ajax({
@@ -167,6 +156,12 @@
           return $error.text('服务器异常，请联系管理员');
         }
       });
+    };
+    $('#loginform .action button').click(formValidate);
+    $('#loginform input').on('keypress', function(e) {
+      if (e.charCode === 13) {
+        return formValidate.call($(this));
+      }
     });
     initLeftBtnEvent = function() {
       $('.btn-signup').click(function() {
@@ -204,7 +199,6 @@
       if (captured) {
         return;
       }
-      console.log(event.deltaY);
       if (event.deltaY < -40) {
         captured = true;
         $body.addClass('show-left');
