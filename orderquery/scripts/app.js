@@ -194,6 +194,7 @@
       }
     });
     initLeftBtnEvent = function() {
+      var $cancel, $feedbackTextrea, $remaingWords, maxWords;
       $leftSide = $('.leftside');
       $('.btn-signup').click(function() {
         $body.removeClass('show-left');
@@ -205,8 +206,21 @@
         $body.addClass('show-right');
         return $loginform.attr('data-form-target', 'signin');
       });
-      return $('.feedback-toggle').click(function() {
+      $('.feedback-toggle').click(function() {
         return $leftSide.toggleClass('show-feedback-container');
+      });
+      maxWords = 1000;
+      $remaingWords = $('.remaing-words');
+      $cancel = $('.feedback-container form .cancel');
+      $feedbackTextrea = $('.feedback-container form textarea').on('input propertychange', function(e) {
+        var $t;
+        $t = $(this);
+        return $remaingWords.text("" + (1000 - $t.val().length) + "字");
+      });
+      return $cancel.click(function() {
+        $feedbackTextrea.val('');
+        $remaingWords.text("1000字");
+        return $leftSide.removeClass('show-feedback-container');
       });
     };
     if (Image) {
