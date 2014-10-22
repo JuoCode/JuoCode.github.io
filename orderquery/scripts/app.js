@@ -243,7 +243,7 @@
           return;
         }
         $sendBtn.prop('disabled', true);
-        $sendBtn.text('正在发送...');
+        $sendBtn.text('正在发送');
         return $.ajax({
           url: feedbackUrl,
           data: {
