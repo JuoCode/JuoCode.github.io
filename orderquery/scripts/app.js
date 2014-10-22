@@ -208,7 +208,7 @@
       }
     });
     initLeftBtnEvent = function() {
-      var $cancel, $feedbackTextrea, $remaingWords, maxWords;
+      var $cancel, $feedbackTextrea, $remaingWords, $sendBtn, feedbackUrl, maxWords;
       $leftSide = $('.leftside');
       $('.btn-signup').click(function() {
         $body.removeClass('show-left');
@@ -231,10 +231,41 @@
         $t = $(this);
         return $remaingWords.text("" + (1000 - $t.val().length) + "字");
       });
-      return $cancel.click(function() {
+      $cancel.click(function() {
         $feedbackTextrea.val('');
         $remaingWords.text("1000字");
         return $leftSide.removeClass('show-feedback-container');
+      });
+      feedbackUrl = 'public/rest/feedback';
+      $sendBtn = $('.feedback-container form .send-fb');
+      return $sendBtn.click(function() {
+        if (!$feedbackTextrea.val().length) {
+          return;
+        }
+        $sendBtn.prop('disabled', true);
+        $sendBtn.text('正在发送...');
+        return $.ajax({
+          url: feedbackUrl,
+          data: {
+            content: $feedbackTextrea.val()
+          },
+          method: 'POST',
+          success: function(data) {
+            var respText;
+            if (data.errcode) {
+              respText = '发送失败';
+            } else {
+              respText = '发送成功';
+            }
+            $sendBtn.text(respText);
+            return setTimeout(function() {
+              $sendBtn.prop('disabled', false);
+              $feedbackTextrea.val('');
+              $remaingWords.text("1000字");
+              return $leftSide.removeClass('show-feedback-container');
+            }, 1000);
+          }
+        });
       });
     };
     if (Image) {
