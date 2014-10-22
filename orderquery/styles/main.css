@@ -462,11 +462,11 @@ body.show-right .main .rightside-toggle-wrapper {
 }
 /* line 491, ../../src/styles/main.scss */
 .leftside .footer .tac.pull-left {
-  margin-left: -10px;
+  margin-left: -5px;
 }
 /* line 492, ../../src/styles/main.scss */
 .leftside .footer .tac.pull-right {
-  margin-right: -10px;
+  margin-right: -5px;
 }
 /* line 494, ../../src/styles/main.scss */
 .leftside .help-block {
