@@ -95,11 +95,11 @@ body.show-right .main .rightside-toggle-wrapper {
 }
 /* line 118, ../../src/styles/main.scss */
 .content .content-wrapper .logo .line.left {
-  left: 0;
+  left: -8px;
 }
 /* line 119, ../../src/styles/main.scss */
 .content .content-wrapper .logo .line.right {
-  right: 0;
+  right: -8px;
 }
 /* line 123, ../../src/styles/main.scss */
 .content .content-wrapper .search-wrapper {
