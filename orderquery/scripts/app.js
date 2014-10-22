@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var $body, $counters, $leftSide, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, captured, emailRegex, errorField, formValidate, img, incrementCount, initLeftBtnEvent, isHover, orderCounter, phoneRegex, showLeft, switchItem;
+    var $body, $counters, $leftSide, $loginform, $main, $slideIndicatorActive, $slideIndicators, $slideItemActive, $slideItems, captured, clearMsg, emailRegex, errorField, formValidate, img, incrementCount, initLeftBtnEvent, isHover, msgHolder, orderCounter, phoneRegex, showError, showLeft, showMsg, switchItem;
     orderCounter = 361840;
     $body = $('body');
     $loginform = $('#loginform');
@@ -108,6 +108,19 @@
       }
       return switchItem($($slideIndicators[_n]));
     }, 5000);
+    msgHolder = $('.submit-res');
+    showError = function(text) {
+      msgHolder.addClass('error');
+      return msgHolder.text(text);
+    };
+    showMsg = function(text) {
+      msgHolder.removeClass('error');
+      return msgHolder.text(text);
+    };
+    clearMsg = function() {
+      msgHolder.removeClass('error');
+      return msgHolder.text('');
+    };
     formValidate = function() {
       var $error, $form, $submitRes, $t, params, password, remoteError, target, targetUrl, username, verifyCode;
       $t = $(this);
@@ -120,25 +133,25 @@
       $submitRes = $('.submit-res');
       if (username.length === 0) {
         errorField = 'username';
-        $error.text('请输入正确的邮箱');
+        showError('请输入正确的邮箱');
         return;
       }
       if (!emailRegex.test(username)) {
         errorField = 'username';
-        $error.text('请输入正确的邮箱');
+        showError('请输入正确的邮箱');
         return;
       }
       if (target !== 'foundpwd') {
         if (password.length < 6) {
           errorField = 'password';
-          $error.text('密码最少6位');
+          showError('密码最少6位');
           return;
         }
       }
       if (target === 'signup') {
         if (verifyCode.length === 0) {
           errorField = 'verifyCode';
-          $error.text('请输入邀请码');
+          showError('请输入邀请码');
           return;
         }
       }
@@ -174,7 +187,7 @@
         data: params,
         success: function(data) {
           if (data.errcode) {
-            return $error.text = remoteError[target][data.errcode];
+            return showError(remoteError[target][data.errcode]);
           } else {
             if (target === 'foundpwd') {
               $submitRes.text('“找回密码”邮件已发送');
@@ -183,7 +196,8 @@
           }
         },
         error: function(resp) {
-          return $error.text('服务器异常，请联系管理员');
+          $form.removeClass('submiting');
+          return showError('服务器异常，请联系管理员');
         }
       });
     };
