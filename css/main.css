@@ -2,7 +2,6 @@
 *{font-family: 'Lato', sans-serif;}
 
 body {
-  background-image: url("/images/bg.jpg");
   -webkit-background-size: cover;
   background-size: cover;
   background-attachment: fixed;

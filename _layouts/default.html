@@ -6,6 +6,7 @@
   <title>{{ page.title }}</title> 
   <meta name="viewport" content="width=device-width">
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
   <!-- syntax highlighting CSS -->
   <link rel="stylesheet" href="/css/syntax.css">
   <link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
@@ -17,34 +18,9 @@
   <script src="/javascripts/app.js"></script>
 <body>
 
-  <div class="wrapper">
-    <header>
-      <div class="avatar">
-        <a href="/">
-          <img src="/images/photo.jpg" alt="" width="80" height="80"/>
-        </a>
-      </div>
+  
+  {{ content }}
 
-      <a href="/about.html" class="about"> <i class="fa fa-user"></i>
-      </a>
-      <a href="/pictures.html" class="picture"> <i class="fa fa-picture-o"></i>
-      </a>
-
-      <div class="blog-name">
-        <h1>
-          <a href="/">
-            <!-- <img src="/images/slogan.png" alt=""> -->
-          </a>
-        </h1>
-      </div>
-    </header>
-
-    <div class="content">
-      {{ content }}
-    </div>
-
-
-  </div>
 
 </body>
 </html>
